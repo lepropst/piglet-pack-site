@@ -348,13 +348,13 @@ export const Services: NextPage = (props: any) => {
         >
           <Typography variant="body1">For Websites</Typography>
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={12} md={4}>
           <ServiceCard item={recurringServices.websites.basic} />
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={12} md={4}>
           <ServiceCard item={recurringServices.websites.intermediate} />
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={12} md={4}>
           <ServiceCard item={recurringServices.websites.advanced} />
         </Grid>
         <Grid item xs={12}>
@@ -385,13 +385,13 @@ export const Services: NextPage = (props: any) => {
         >
           <Typography variant="body1">For Servers</Typography>
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={12} md={4}>
           <ServiceCard item={recurringServices.servers.customServer} />
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={12} md={4}>
           <ServiceCard item={recurringServices.servers.serverless} />
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={12} md={4}>
           <ServiceCard item={recurringServices.servers.audit} />
         </Grid>
       </Grid>
@@ -411,16 +411,16 @@ export const Services: NextPage = (props: any) => {
         container
         alignItems="stretch"
       >
-        <Grid item xs={4}>
+        <Grid item xs={12} md={3}>
           <ServiceCard item={projectServices.websiteCreation} />
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={12} md={3}>
           <ServiceCard item={projectServices.apiDigitalServices} />
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={12} md={3}>
           <ServiceCard item={projectServices.situationalResponse} />
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={12} md={3}>
           <ServiceCard item={projectServices.customServerSetUp} />
         </Grid>
       </Grid>

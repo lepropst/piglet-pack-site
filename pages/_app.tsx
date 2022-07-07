@@ -10,7 +10,6 @@ import "@fontsource/roboto/700.css";
 import type { AppProps } from "next/app";
 import dynamic from "next/dynamic";
 import { Suspense } from "react";
-import "../styles/globals.css";
 import Body from "../components/body/body";
 import createEmotionCache from "../utilities/createEmotionCache";
 import { CacheProvider, EmotionCache } from "@emotion/react";

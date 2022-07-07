@@ -1,7 +1,7 @@
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Fade from "@mui/material/Fade";
-import { forwardRef, useRef } from "react";
+import { forwardRef, useEffect, useRef, useState } from "react";
 import { useIntersectionObserver } from "../../utilities/use-intersection-observer";
 
 export interface CommonLayoutPropType {
@@ -29,24 +29,26 @@ export const CommonLayout = forwardRef(
             : "inherit",
         }}
       >
-        <Typography variant="h2">{props.title}</Typography>
-        <Fade in={visible} timeout={500}>
-          <Box
-            sx={{
-              marginL: "4rem",
-            }}
-          >
-            {props.text.length > 1 &&
-              props.text.map((e, i) => (
-                <Fade key={`${e}-${i}-text`} in={visible} timeout={1000 * i}>
-                  <Typography variant="h5" marginBottom="1.5rem">
-                    {e}
-                  </Typography>
-                </Fade>
-              ))}
-          </Box>
-        </Fade>
-        <Box ref={innerRef} sx={{ display: "block" }} />
+        <Box ref={innerRef}>
+          <Typography variant="h2">{props.title}</Typography>
+
+          <Fade in={visible} timeout={500}>
+            <Box
+              sx={{
+                marginL: "4rem",
+              }}
+            >
+              {props.text.length > 1 &&
+                props.text.map((e, i) => (
+                  <Fade key={`${e}-${i}-text`} in={visible} timeout={1000 * i}>
+                    <Typography variant="h5" marginBottom="1.5rem">
+                      {e}
+                    </Typography>
+                  </Fade>
+                ))}
+            </Box>
+          </Fade>
+        </Box>
       </Box>
     );
   }
