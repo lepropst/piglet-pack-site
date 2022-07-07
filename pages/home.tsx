@@ -3,7 +3,7 @@ import Divider from "@mui/material/Divider";
 import Link from "@mui/material/Link";
 import Fade from "@mui/material/Fade";
 import GlobalStyles from "@mui/material/GlobalStyles";
-
+import pigletDividerBlack from '../public/piglet_divider_black.png';
 import { useIntersectionObserver } from "../utilities/use-intersection-observer";
 import { ReactElement, useEffect, useRef, useState } from "react";
 // import Image from "mui-image";
@@ -50,7 +50,7 @@ export const Home = () => {
       >
         <Image
           src={
-            "https://ik.imagekit.io/yuoea5uff/pigletpack/piglet_divider_black_-CzRHEEw-.png"
+            pigletDividerBlack
           }
           alt="logo link for Piglet Pack"
           height="169"
