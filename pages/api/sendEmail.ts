@@ -14,7 +14,11 @@ export function sendEmail(req: NextApiRequest, res: NextApiResponse<Data>) {
   let bodySubject = req.body.subject;
   let mess = {};
   // Set region
-  AWS.config.update({ region: "us-east-1" });
+  AWS.config.update({
+    accessKeyId: process.env.ACCESS_KEY_ID,
+    secretAccessKey: process.env.SECRET_ACCESS_KEY,
+    region: "us-east-1",
+  });
   const awsMessage = `${fromAddr}\n${bodySubject}\n\n${message}`;
   console.log(awsMessage);
   console.log(req.body);
