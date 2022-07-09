@@ -4,14 +4,14 @@ const nextConfig = {
   async redirects() {
     return [
       {
-        source: "/submit",
-        destination: "/home",
+        source: '/submit',
+        destination: '/home',
         permanent: true,
       },
     ];
   },
   images: {
-    domains: ["ik.imagekit.io"],
+    domains: ['ik.imagekit.io'],
   },
 };
 

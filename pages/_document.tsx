@@ -1,9 +1,9 @@
-import * as React from "react";
-import Document, { Html, Head, Main, NextScript } from "next/document";
-import createEmotionServer from "@emotion/server/create-instance";
-import Theme from "../utilities/styling/getStylingTokens";
-import createEmotionCache from "../utilities/createEmotionCache";
-const theme = Theme("light");
+import * as React from 'react';
+import Document, { Html, Head, Main, NextScript } from 'next/document';
+import createEmotionServer from '@emotion/server/create-instance';
+import Theme from '../utilities/styling/getStylingTokens';
+import createEmotionCache from '../utilities/createEmotionCache';
+const theme = Theme('light');
 
 export default class MyDocument extends Document {
   render() {
@@ -12,8 +12,6 @@ export default class MyDocument extends Document {
         <Head>
           {/* PWA primary color */}
           <meta name="theme-color" content={theme.palette.primary.main} />
-          <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
           <link rel="shortcut icon" href="../public/favicon.ico" />
           {/* Inject MUI styles first to match with the prepend: true configuration. */}
           {(this.props as any).emotionStyleTags}
@@ -73,7 +71,7 @@ MyDocument.getInitialProps = async (ctx) => {
   const emotionStyles = extractCriticalToChunks(initialProps.html);
   const emotionStyleTags = emotionStyles.styles.map((style) => (
     <style
-      data-emotion={`${style.key} ${style.ids.join(" ")}`}
+      data-emotion={`${style.key} ${style.ids.join(' ')}`}
       key={style.key}
       // eslint-disable-next-line react/no-danger
       dangerouslySetInnerHTML={{ __html: style.css }}

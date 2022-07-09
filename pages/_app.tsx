@@ -1,25 +1,25 @@
-import CssBaseline from "@mui/material/CssBaseline";
-import { ColorModeContext, useTheme } from "../utilities/styling";
-import Head from "next/head";
-import { ThemeProvider } from "@mui/system";
-import { GlobalStyles } from "@mui/material";
-import "@fontsource/roboto/300.css";
-import "@fontsource/roboto/400.css";
-import "@fontsource/roboto/500.css";
-import "@fontsource/roboto/700.css";
-import type { AppProps } from "next/app";
-import dynamic from "next/dynamic";
-import { Suspense } from "react";
-import Body from "../components/body/body";
-import createEmotionCache from "../utilities/createEmotionCache";
-import { CacheProvider, EmotionCache } from "@emotion/react";
+import CssBaseline from '@mui/material/CssBaseline';
+import { ColorModeContext, useTheme } from '../utilities/styling';
+import Head from 'next/head';
+import { ThemeProvider } from '@mui/system';
+import { GlobalStyles } from '@mui/material';
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
+import type { AppProps } from 'next/app';
+import dynamic from 'next/dynamic';
+import { Suspense } from 'react';
+import Body from '../components/body/body';
+import createEmotionCache from '../utilities/createEmotionCache';
+import { CacheProvider, EmotionCache } from '@emotion/react';
 
 const clientSideEmotionCache = createEmotionCache();
-const DynamicHeader = dynamic(() => import("../components/header/header"), {
+const DynamicHeader = dynamic(() => import('../components/header/header'), {
   suspense: true,
   ssr: false,
 });
-const DynamicFooter = dynamic(() => import("../components/footer/footer"), {
+const DynamicFooter = dynamic(() => import('../components/footer/footer'), {
   suspense: true,
   ssr: false,
 });
@@ -34,13 +34,16 @@ function MyApp({
       styles={{
         body: {
           backgroundImage:
-            "linear-gradient(to left, rgba(29, 124, 181, .07), rgba(29, 181, 163,.1))",
+            'linear-gradient(to left, rgba(29, 124, 181, .07), rgba(29, 181, 163,.1))',
         },
       }}
     />
   );
   return (
     <CacheProvider value={emotionCache}>
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </Head>
       <ThemeProvider theme={theme}>
         <ColorModeContext.Provider value={colorMode}>
           <CssBaseline>
@@ -58,7 +61,7 @@ function MyApp({
               <Component {...pageProps} />
             </Body>
 
-            <Suspense fallback={"...loading"}>
+            <Suspense fallback={'...loading'}>
               <DynamicFooter />
             </Suspense>
           </CssBaseline>
