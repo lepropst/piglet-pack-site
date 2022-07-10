@@ -3,45 +3,56 @@ import Divider from '@mui/material/Divider';
 import Link from '@mui/material/Link';
 import Fade from '@mui/material/Fade';
 import GlobalStyles from '@mui/material/GlobalStyles';
-import pigletDividerBlack from '../public/piglet_divider_black.png';
-
 import { useIntersectionObserver } from '../utilities/use-intersection-observer';
-import { ReactElement, useRef } from 'react';
+import { useMemo, useRef } from 'react';
 
-import Image from 'next/image';
-
-import MissionStatement, {
-  MissionStatementContainer,
-} from '../components/common/MissionStatement';
-import { WhyUs, WelcomeMessageContainer } from '../components/home';
+import Layout from '../components/home';
 import { getContent } from '../lib/api';
 
-const FadeComponent = (props: {
-  threshold?: number;
-  children: ReactElement<any, any>;
-}) => {
-  const ref = useRef<HTMLDivElement>(null);
-  const visible = useIntersectionObserver({
-    root: null,
-    ref: ref,
-    threshold: props.threshold ? props.threshold : 0.2,
-  });
-
-  return (
-    <Box ref={ref} sx={{ scrollSnapAlign: 'center' }}>
-      <Fade timeout={750} in={visible}>
-        {props.children}
-      </Fade>
-    </Box>
-  );
-};
 type Props = {
-  WelcomeMessageContent: {
+  welcome_message_01: {
     title: string;
     date: string;
     author: { name: string };
     content: string;
   };
+  welcome_message_02: {
+    title: string;
+    date: string;
+    author: { name: string };
+    content: string;
+  };
+  welcome_message_03: {
+    title: string;
+    date: string;
+    author: { name: string };
+    content: string;
+  };
+  why_us_01: {
+    title: string;
+    date: string;
+    author: { name: string };
+    content: string;
+  };
+  why_us_02: {
+    title: string;
+    date: string;
+    author: { name: string };
+    content: string;
+  };
+  why_us_03: {
+    title: string;
+    date: string;
+    author: { name: string };
+    content: string;
+  };
+  why_us_04: {
+    title: string;
+    date: string;
+    author: { name: string };
+    content: string;
+  };
+
   MissionStatementContent: {
     title: string;
     date: string;
@@ -51,50 +62,55 @@ type Props = {
 };
 
 export const Home = (props: Props) => {
-  const gStyles = <GlobalStyles styles={{ body: { overflowX: 'hidden' } }} />;
-  const { WelcomeMessageContent, MissionStatementContent } = props;
-  console.log(MissionStatementContent);
+  const {
+    welcome_message_01,
+    welcome_message_02,
+    welcome_message_03,
+    why_us_04,
+    why_us_03,
+    why_us_02,
+    why_us_01,
+    MissionStatementContent,
+  } = useMemo(() => props, [props]);
+
+  const welcomeRef = useRef<HTMLDivElement>(null);
+  const initiate_welcome = useIntersectionObserver({
+    root: null,
+    ref: welcomeRef,
+  });
+  const whyRef = useRef<HTMLDivElement>(null);
+  const initiate_why = useIntersectionObserver({
+    root: null,
+    ref: welcomeRef,
+  });
   return (
-    <Box>
-      {gStyles}
-      <Link
-        sx={{
-          display: 'flex',
-          margin: '1em',
-          marginLeft: '3em',
-          marginRight: '3em',
-          width: 'auto',
-          height: 'auto',
-          justifyContent: 'center',
-        }}
-        href="/"
-      >
-        <Image
-          src={pigletDividerBlack}
-          alt="logo links for Piglet Pack"
-          height="169"
-          width="1203"
-        />
-      </Link>
-      <MissionStatementContainer
-        padding=".5em"
-        justifyContent="start"
-        minHeight={'.7vh'}
-        content={MissionStatementContent.content}
-      />
-      <Divider variant="middle" textAlign="center" light></Divider>
-      <FadeComponent>
-        <WelcomeMessageContainer content={WelcomeMessageContent.content} />
-      </FadeComponent>
-      <WhyUs />
-    </Box>
+    <Layout
+      welcome_message_01={welcome_message_01}
+      welcome_message_02={welcome_message_02}
+      welcome_message_03={welcome_message_03}
+      why_us_04={why_us_04}
+      why_us_03={why_us_03}
+      why_us_02={why_us_02}
+      why_us_01={why_us_01}
+      MissionStatementContent={MissionStatementContent}
+    />
   );
 };
 export default Home;
 export const getStaticProps = async () => {
-  const WelcomeMessageContent = getContent({
+  const welcome_message_01 = getContent({
     directory: 'home',
-    filename: 'welcome-message.md',
+    filename: 'welcome-message_01.md',
+    fields: ['title', 'date', 'author', 'content'],
+  });
+  const welcome_message_02 = getContent({
+    directory: 'home',
+    filename: 'welcome-message_02.md',
+    fields: ['title', 'date', 'author', 'content'],
+  });
+  const welcome_message_03 = getContent({
+    directory: 'home',
+    filename: 'welcome-message_03.md',
     fields: ['title', 'date', 'author', 'content'],
   });
   const MissionStatementContent = getContent({
@@ -102,8 +118,37 @@ export const getStaticProps = async () => {
     filename: 'mission-statement.md',
     fields: ['title', 'date', 'author', 'content'],
   });
+  const why_us_01 = getContent({
+    directory: 'home',
+    filename: 'why-us_01.md',
+    fields: ['title', 'date', 'author', 'content'],
+  });
+  const why_us_02 = getContent({
+    directory: 'home',
+    filename: 'why-us_02.md',
+    fields: ['title', 'date', 'author', 'content'],
+  });
+  const why_us_03 = getContent({
+    directory: 'home',
+    filename: 'why-us_03.md',
+    fields: ['title', 'date', 'author', 'content'],
+  });
+  const why_us_04 = getContent({
+    directory: 'home',
+    filename: 'why-us_04.md',
+    fields: ['title', 'date', 'author', 'content'],
+  });
 
   return {
-    props: { WelcomeMessageContent, MissionStatementContent },
+    props: {
+      welcome_message_01,
+      welcome_message_02,
+      welcome_message_03,
+      why_us_01,
+      why_us_02,
+      why_us_03,
+      why_us_04,
+      MissionStatementContent,
+    },
   };
 };

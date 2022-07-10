@@ -5,7 +5,12 @@ const nextConfig = {
     return [
       {
         source: '/submit',
-        destination: '/home',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/home',
+        destination: '/',
         permanent: true,
       },
     ];

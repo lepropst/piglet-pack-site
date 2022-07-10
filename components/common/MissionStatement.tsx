@@ -1,10 +1,8 @@
 import { SxProps, Theme } from '@mui/material';
 import Box from '@mui/material/Box';
-import Divider from '@mui/material/Divider';
 import Typography from '@mui/material/Typography';
 import Markdown from 'markdown-to-jsx';
 import { ReactNode } from 'react';
-import { Link } from 'react-router-dom';
 
 export const MissionStatementContainer = (props: {
   content: string;
@@ -40,8 +38,9 @@ export const MissionStatementContainer = (props: {
 
   return (
     <Box sx={styles}>
-      <Markdown>{props.content}</Markdown>
-
+      <Typography component={'div'}>
+        <Markdown>{props.content}</Markdown>
+      </Typography>
       {props.children && props.children}
     </Box>
   );

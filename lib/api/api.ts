@@ -63,6 +63,5 @@ function returnFileContents(
       items[field] = data[field];
     }
   });
-  console.log(fields);
   return items;
 }

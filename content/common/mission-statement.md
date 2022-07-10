@@ -5,8 +5,6 @@ author:
   name: Elias Rangel
 ---
 
-r
+# Mission Statement
 
-## Mission Statement
-
-#### Piglet Pack is the combined effort of two autistic individuals encouraging the optimization of professional communication across various platforms. The Piglet Pack priority is to aid in the collaborative development of effective and accessible communication that is comfortable for all parties.
+## Piglet Pack is the combined effort of two autistic individuals encouraging the optimization of professional communication across various platforms. The Piglet Pack priority is to aid in the collaborative development of effective and accessible communication that is comfortable for all parties.
