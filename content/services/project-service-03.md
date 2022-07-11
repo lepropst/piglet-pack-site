@@ -12,7 +12,6 @@ more, they provide immediate access to the support necessary to decipher
 and resolve sudden issues or changes in behavior in client digital
 services.
 
-<div style="height:2em;"></div>
 Our advice and support can be a determining factor in the timeline of
 resolving an issue, whether Piglet Pack implements the solution or not.
 Our services extend as far as our clients need help. Reports on

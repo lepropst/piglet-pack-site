@@ -23,24 +23,6 @@ export const Layout = (props: Props) => {
         marginY: '3em',
       }}
     >
-      <Box sx={{ margin: '5em' }}>
-        <Typography variant="body1">
-          Each category of service is listed below. Every category address a
-          specific area of concern or time specific needs.
-        </Typography>
-      </Box>
-      <Paper
-        elevation={4}
-        sx={{
-          textAlign: 'center',
-          paddingLeft: '2em',
-          paddingRight: '2em',
-          margin: '2em',
-          backgroundColor: 'secondary.main',
-        }}
-      >
-        <Typography variant="h5">Recurring Services</Typography>
-      </Paper>
       <Grid container direction="row" spacing={2}>
         <Grid
           item
@@ -54,10 +36,50 @@ export const Layout = (props: Props) => {
         >
           <Typography variant="body1">For Websites</Typography>
         </Grid>
-
-        {props.websiteServices.map((e, i) => (
-          <Grid item xs={12} md={4} key={`${e.title}-${i}`}>
-            <Card raised sx={{ padding: '1em' }}>
+        <Grid item xs={12}>
+          <Card>
+            <CardHeader title="Single Page Website Special!" action="$250" />
+            <CardContent>
+              Single page static or Wordpress websites are offered as an
+              independent service. We can design a full page for single-page
+              website, or simply add an extra page to your existing site.
+              <div style={{ height: '1em' }} />
+              Often creating a static single-page website is ideal for events,
+              weddings, or other important events. With our services you can
+              specify any design or visual effect and keep the code for use
+              later!
+              <div style={{ height: '1em' }} />
+              <div style={{ display: 'flex', justifyContent: 'center' }}>
+                <ul style={{ margin: 0, padding: 0 }}>
+                  <li>Basic SEO Optimization</li>
+                  <li>Security Monitoring</li>
+                  <li>Basic Malware Removal</li>
+                  <li>Monitoring Errors and Outages</li>
+                  <li>Software update and function checks</li>
+                  <li>Cloud Backups</li>
+                  <li>Custom Recurring Requests</li>
+                </ul>
+                <ul>
+                  <li>2 hours website support</li>
+                  <li>Staff phone support</li>
+                  <li>Updates and minor additions</li>
+                  <li>Web Developer Assistance</li>
+                  <li>Mobile Optimization</li>
+                  <li>Design Optimization</li>
+                </ul>
+              </div>
+            </CardContent>
+          </Card>
+        </Grid>
+        {websiteServices.map((e, i) => (
+          <Grid
+            item
+            xs={12}
+            md={i === Object.keys(websiteServices).length - 1 ? 12 : 6}
+            lg={4}
+            key={`${e.title}-${i}`}
+          >
+            <Card raised sx={{ padding: '1em', height: '100%' }}>
               <CardHeader
                 title={e.title}
                 action={typeof e.price === 'number' ? `$${e.price}` : e.price}
@@ -71,13 +93,15 @@ export const Layout = (props: Props) => {
 
         <Grid item xs={12}>
           <Paper sx={{ padding: '1em' }}>
-            All these service come with a flexibility gurantee. If you do not
-            see what you are looking for, or would like to request anything
-            specific: send us a qoute!
-            <div style={{ height: '2em' }} />
-            We are able to accommodate most situations and our services always
-            come with a service plan so we can transparently work with our
-            clients.
+            <Typography component="div">
+              All these service come with a flexibility guarantee. If you do not
+                see what you are looking for, or would like to request anything
+              specific: send us an email!
+              <div style={{ height: '2em' }} />
+              We are able to accommodate most situations and our services always
+              come with a service plan so we can transparently work with our
+              clients.
+            </Typography>
           </Paper>
           <div
             style={{
@@ -100,8 +124,20 @@ export const Layout = (props: Props) => {
         >
           <Typography variant="body1">For Servers</Typography>
         </Grid>
+
         {serverServices.map((e, i) => (
-          <Grid item xs={12} md={4} key={`${e.title}-${i}`}>
+          <Grid
+            item
+            xs={12}
+            md={
+              i % 2 === 0 && i === Object.keys(serverServices).length - 1
+                ? 12
+                : 6
+            }
+            lg={4}
+            key={`${e.title}-${i}`}
+            sx={{ height: '100%' }}
+          >
             <Card raised sx={{ padding: '1em' }}>
               <CardHeader
                 title={e.title}
@@ -113,6 +149,39 @@ export const Layout = (props: Props) => {
             </Card>
           </Grid>
         ))}
+        <Grid item xs={12}>
+          <Typography variant="h6" component="div">
+            Our services are meant to make life easier. Whether you want a
+            completely custom set up, a content management system, or to manage
+            a cloud drive we have experience in a versatile array of languages.
+            There are many instances from hobby projects, to small business
+            infrastructure, that may require the hosting or ownership of a
+            server. We can help simplify the process of implementing most server
+            and server-less infrastructure. Our experience in content management
+            systems, static website servers, and APIs make our services suitable
+            to enable you to host on or off premise.
+            <div style={{ height: '1em' }} />
+            We Maintain experience in
+            <div style={{ display: 'flex' }}>
+              <ul>
+                <li>Django</li>
+                <li>Express</li>
+                <li>Flask</li>
+                <li>NextJs</li>
+                <li>NuxtJs</li>
+                <li>Wordpress</li>
+              </ul>
+
+              <ul>
+                <li>NestJs</li>
+                <li>Shopify</li>
+                <li>Wix</li>
+                <li>Material-ui (Googles UI Framework)</li>
+                <li>SQL and No SQL Databases</li>
+              </ul>
+            </div>
+          </Typography>
+        </Grid>
       </Grid>
 
       <Typography variant="h5">Project Based Services</Typography>

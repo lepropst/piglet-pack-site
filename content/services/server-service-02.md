@@ -1,22 +1,13 @@
 ---
-title: 'Serverless Infrastructure Services'
+title: 'Server Creation'
 date: '7/9/2022, 3:16:15 AM'
-price: 'Starting at $250'
+price: 'Starting at $300'
 author:
   name: Elias Rangel
 ---
 
-AWS, Google Cloud Products, and Cloudflare networks can be complex to
-manage. Piglet pack can host, manage, and completely construct new web
-services with serverless infrastructure according to client wants.
+Our custom server creation service offers a wide variety of technology stacks to build any type of custom server. Application programming interfaces (API) and business critical services, to gaming servers all fall within the realm of possibility with this service.
 
-<div style= "height:2em;"></div>
+The pricing model for this service varies as it is wholly dependent upon client needs in regards to the server configuration and type of server. The $300 mark would be equivalent to setting up a MineCraft or static site server with appropriate protocols in place to protect it and our clients.
 
-From independent functions for small workflows, to fully distributed
-delivery systems, mailing systems, or other business software needs
-Piglet Pack has the necessary experience to design and implement
-serverless architectures. Our services can be full-fledged management
-
-with notifications of due charges and renewals or can be simple
-designs and help with implementations. Completely up to the client our
-services mimic the model that many cloud service providers adhere to.
+Hosting options are listed below for both Piglet Pack managed and client managed solutions.

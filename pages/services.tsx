@@ -12,6 +12,7 @@ type Props = {
   server_service_01: { title: string; price: string; content: string };
   server_service_02: { title: string; price: string; content: string };
   server_service_03: { title: string; price: string; content: string };
+  server_service_04: { title: string; price: string; content: string };
   website_service_01: { title: string; price: string; content: string };
   website_service_02: { title: string; price: string; content: string };
   website_service_03: { title: string; price: string; content: string };
@@ -24,6 +25,7 @@ export const Services = (props: Props) => {
         props.server_service_01,
         props.server_service_02,
         props.server_service_03,
+        props.server_service_04,
       ]}
       websiteServices={[
         props.website_service_01,
@@ -75,6 +77,11 @@ export const getStaticProps = async () => {
     filename: 'server-service-03.md',
     fields: ['price', 'content', 'title'],
   });
+  const server_service_04 = getContent({
+    directory: 'services',
+    filename: 'server-service-04.md',
+    fields: ['price', 'content', 'title'],
+  });
   const website_service_01 = getContent({
     directory: 'services',
     filename: 'website-service-01.md',
@@ -99,6 +106,7 @@ export const getStaticProps = async () => {
       server_service_01,
       server_service_02,
       server_service_03,
+      server_service_04,
       website_service_01,
       website_service_02,
       website_service_03,

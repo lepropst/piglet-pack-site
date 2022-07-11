@@ -1,27 +1,15 @@
 ---
-title: 'Digital Service Audit'
+title: 'Integrations'
 date: '7/9/2022, 3:16:15 AM'
-price: 'Starting at $180'
+price: 'Starting at $50'
 author:
   name: Elias Rangel
 ---
 
-Piglet Pack has the capability to break down complex situations
-regarding digital services into actionable chunks to efficiently
-resolve issues from billing, configuration, API updates, or versioning
-errors. Whether our clients are well versed or not, they often rely on
-us to generate succinct reports on the status of digital services when
-unexpected behavior appears.
+Custom configurations are almost always required!
 
-<div style= "height:2em;"></div>
-Breaking or not, unexpected behavior from billing issues to content
-delivery issues, can impact the performance of a client’s digital
-presence. Our digital service audits provide insight to the status and
-expected performance of various digital assets so that our clients can
-rest assured their services remain working. Simple audits can provide
-key insight to the workings, practices used, and current status of
-search engine ranking for a clients website. Further analysis can
-reveal security vulnerabilitiies and non cost-effective areas. Our
-fully detailed reports provide these insights in an effort to promote
-the best practices for our clients.
-<div style= "height:2em;"></div>
+This can make things difficult, especially when adding plugins to WordPress, other site builders, or integrating new software.
+
+We can make it easy to link or integrate multiple services to allow for common configurations such as getting an email when a form is submitted.
+
+Any integration from Facebook and Shopify, to Calendar servers and custom todo apps fall within the realm of this service. The price varies depending on complexity, simple WordPress plugins, for example, would be at the $50 mark.
