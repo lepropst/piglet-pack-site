@@ -1,20 +1,12 @@
 ---
-title: 'Situational Response and Emergency Services'
+title: 'Website Search Engine Optimization Audit'
 date: '7/9/2022, 3:16:15 AM'
-price: 'Startig at $400'
+price: 'Startig at $50'
 author:
   name: Elias Rangel
 ---
 
-Sometimes things go wrong. Piglet Pack strives to make itself available
-for emergency and rapid repones services. While these services cost
-more, they provide immediate access to the support necessary to decipher
-and resolve sudden issues or changes in behavior in client digital
-services.
+We can audit your website to measure several aspects of SEO (Search engine optimization). From simple content tags and meta information to back-links and appropriate accessibility. We are able to provide a full report.
+Audits website for multiple aspects of SEO including content tags, meta information, back links, and appropriate accessibility standards for web crawlers.
 
-Our advice and support can be a determining factor in the timeline of
-resolving an issue, whether Piglet Pack implements the solution or not.
-Our services extend as far as our clients need help. Reports on
-situations that might be reported to vendors often require contextual
-evidence which can be easily collated by Piglet Pack upon inspection of
-any sudden issue.
+This report provides information on why an SEO ranking is high or low. Further provides insight to the implementation of SEO friendly terms within content tags and meta information, number of back links, and changes necessary to allow web crawlers to appropriate index the website.

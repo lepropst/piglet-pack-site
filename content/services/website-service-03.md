@@ -15,3 +15,22 @@ Converting to a PWA means that a site is installable and comes with certain func
 This route is best if your site is meant to be revisited often. A PWA provides performance for users with low signal, the ability to maintain an installed version of the app, and send notifications to users.
 
 Our PWA Service includes the standard support options listed for our regular website services.
+
+#### Included:
+
+<div style="display:flex;">
+<ul style="margin:0;padding:0" >
+<li>Basic SEO Optimization of updated component</li>
+<li>Basic Malware Removal</li>
+<li>Monitoring Errors and Outages</li>
+<li>Software update and function checks</li>
+<li>2 hours website support</li>
+<ul>
+
+</ul>
+<li>Staff phone support</li>
+<li>Web Developer Assistance</li>
+<li>Mobile Optimization</li>
+<li>Design Optimization</li>
+</ul>
+</div>

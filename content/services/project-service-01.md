@@ -1,24 +1,25 @@
 ---
-title: 'Website Creation and Maintenance'
+title: 'Digital Service Audit'
 date: '7/9/2022, 3:16:15 AM'
-price: 'Startig at $400'
+price: 'Starting at $180'
 author:
   name: Elias Rangel
 ---
 
-We can provide website creation, update, and maintenance services to
-ensure smooth delivery of online content. Our user interface developers
-have experience with photo editing, graphic design, and numerous
-front-end languages and frameworks that enable them total creative
-freedom.
+Piglet Pack has the capability to break down complex situations
+regarding digital services into actionable chunks to efficiently
+resolve issues from billing, configuration, API updates, or versioning
+errors. Whether our clients are well versed or not, they often rely on
+us to generate succinct reports on the status of digital services when
+unexpected behavior appears.
 
-We can provide any degree of initial set up or routine check-ups. From
-completely initiating and creating a website for a client, to assisting
-in account creation only, we can provide any level of service necessary
-to ensure our clients website needs are met.
-
-Since all of our services are provided with a service plan, we are
-always capable of advising on unsure situations to provide guidance to
-the most efficient and cost-effective solution. Our transparency in this
-process is core to the goal of our business and reflects our want to
-create a more accessible web development service provider.
+Breaking or not, unexpected behavior from billing issues to content
+delivery issues, can impact the performance of a client’s digital
+presence. Our digital service audits provide insight to the status and
+expected performance of various digital assets so that our clients can
+rest assured their services remain working. Simple audits can provide
+key insight to the workings, practices used, and current status of
+search engine ranking for a clients website. Further analysis can
+reveal security vulnerabilitiies and non cost-effective areas. Our
+fully detailed reports provide these insights in an effort to promote
+the best practices for our clients.

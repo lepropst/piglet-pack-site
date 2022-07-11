@@ -1,17 +1,13 @@
 ---
-title: 'Custom Server Setup'
+title: 'Search Engine Optimization'
 date: '7/9/2022, 3:16:15 AM'
-price: 'Startig at $400'
+price: 'Startig at $50'
 author:
   name: Elias Rangel
 ---
 
-We offer project based server, API, and integration services. They mimic
-our recurrent server services but are priced differently and do not
-inherently include long term support.
+This service is here because it links directly to our SEO website audit service. From that report we are able to perform direct fixes.
 
-<div style="height:2em;"></div>
-Piglet Pack in its effort to remain flexible can perform any service as
-a one time service, or recurrent service if needed. Negotiation for
-support is also always an opt-in option to produce the easiest structure
-for our clients.
+Our fixes are offered as an individual service to remain open and transparent that many of these factors can be taken care of easily. We are able to implement solutions, especially as we audit your service; however, if preferred we can simply provide only a report.
+
+Content tags, meta information, Google business image, linking social sites, and creating plans for back links to increase appearances are all included within this service.

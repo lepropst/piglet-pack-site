@@ -5,6 +5,7 @@ import Grid from '@mui/material/Grid';
 
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
+import { flexbox } from '@mui/system';
 import Markdown from 'markdown-to-jsx';
 
 type Props = {
@@ -23,7 +24,7 @@ export const Layout = (props: Props) => {
         marginY: '3em',
       }}
     >
-      <Grid container direction="row" spacing={2}>
+      <Grid container direction="row" spacing={2} justifyContent="center">
         <Grid
           item
           xs={12}
@@ -34,7 +35,7 @@ export const Layout = (props: Props) => {
               'linear-gradient(to left, rgba(29, 124, 181, .05), rgba(29, 181, 163,.3))',
           }}
         >
-          <Typography variant="body1">For Websites</Typography>
+          <Typography variant="h6">For Websites</Typography>
         </Grid>
         <Grid item xs={12}>
           <Card>
@@ -79,7 +80,7 @@ export const Layout = (props: Props) => {
             lg={4}
             key={`${e.title}-${i}`}
           >
-            <Card raised sx={{ padding: '1em', height: '100%' }}>
+            <Card raised sx={{ padding: '1em' }}>
               <CardHeader
                 title={e.title}
                 action={typeof e.price === 'number' ? `$${e.price}` : e.price}
@@ -122,7 +123,7 @@ export const Layout = (props: Props) => {
               'linear-gradient(to left, rgba(29, 124, 181, .05), rgba(29, 181, 163,.3))',
           }}
         >
-          <Typography variant="body1">For Servers</Typography>
+          <Typography variant="h6">For Servers</Typography>
         </Grid>
 
         {serverServices.map((e, i) => (
@@ -149,6 +150,7 @@ export const Layout = (props: Props) => {
             </Card>
           </Grid>
         ))}
+
         <Grid item xs={12}>
           <Typography variant="h6" component="div">
             Our services are meant to make life easier. Whether you want a
@@ -182,19 +184,20 @@ export const Layout = (props: Props) => {
             </div>
           </Typography>
         </Grid>
-      </Grid>
-
-      <Typography variant="h5">Project Based Services</Typography>
-
-      <Grid
-        spacing={2}
-        justifyContent="center"
-        direction="row"
-        container
-        alignItems="stretch"
-      >
+        <Grid
+          item
+          xs={12}
+          sx={{
+            display: 'flex',
+            justifyContent: 'center',
+            backgroundImage:
+              'linear-gradient(to left, rgba(29, 124, 181, .05), rgba(29, 181, 163,.3))',
+          }}
+        >
+          <Typography variant="h6">Audits</Typography>
+        </Grid>
         {projectServices.map((e, i) => (
-          <Grid item xs={12} md={4} key={`${e.title}-${i}`}>
+          <Grid item xs={12} md={6} lg={4} key={`${e.title}-${i}`}>
             <Card raised sx={{ padding: '1em' }}>
               <CardHeader
                 title={e.title}
@@ -207,6 +210,14 @@ export const Layout = (props: Props) => {
           </Grid>
         ))}
       </Grid>
+
+      <Grid
+        spacing={2}
+        justifyContent="center"
+        direction="row"
+        container
+        alignItems="stretch"
+      ></Grid>
     </Box>
   );
 };

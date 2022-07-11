@@ -1,22 +1,21 @@
 ---
-title: 'Digital Service Integration and Development'
+title: 'Website Audit'
 date: '7/9/2022, 3:16:15 AM'
-price: 'Startig at $150'
+price: 'Starting at $180'
 author:
   name: Elias Rangel
 ---
 
-Choices are infinite when choosing how to distribute digital content.
-Working with hosting service providers, serverless infrastructure, or
-any cloud service can be overwhelming and frustrating.
+We can perform an audit of your website to determine several factors:
 
-Our services allow clients to focus on specific aspects of the digital
-services they utilize while Piglet Pack manages other areas that can be
-distracting and frustrating to handle. Working with any digital service
-can be simplified by describing the goal and providing us access to
-resources the client wants managed.
+<div style="display:flex;flexDirection:column">
+security standards
+accessibility standards
+performance metrics
+</div>
 
-From domain renewal reminders, serverless infrastructure monitoring, or
-hosting provider monitoring, we can help. We allow clients to retain the
-exact control they desire while providing an easy solution for managing
-aspects of digital services that are too time consuming.
+These are important and can lead to huge improvements for your clients experience. Our website audit provides the tools to create an actionable plan towards any issue.
+
+We can also cover audits of websites that are not working. We consider this more of an investigation but are able to determine many cases of failure.
+
+Our detailed reports provide these insights in an effort to promote the best practices for our clients.
