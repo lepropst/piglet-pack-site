@@ -18,16 +18,17 @@ Our PWA Service includes the standard support options listed for our regular web
 
 #### Included:
 
-<div style="display:flex;">
-<ul style="margin:0;padding:0" >
+<div >
+<ul style="margin:.25em;padding:0;list-style-type: none;" >
 <li>Basic SEO Optimization of updated component</li>
 <li>Basic Malware Removal</li>
 <li>Monitoring Errors and Outages</li>
 <li>Software update and function checks</li>
 <li>2 hours website support</li>
-<ul>
 
 </ul>
+<ul style="margin:.25em;padding:0;list-style-type: none;" >
+
 <li>Staff phone support</li>
 <li>Web Developer Assistance</li>
 <li>Mobile Optimization</li>

@@ -16,8 +16,8 @@ Specify any amount of details, or bring your own design entirely and we can prov
 
 #### Included:
 
-<div style="display:flex;">
-<ul style="margin:0;padding:0" >
+<div >
+<ul style="margin:.25em;padding:0;list-style-type: none;" >
 <li>Basic SEO Optimization</li>
 <li>Security Monitoring</li>
 <li>Basic Malware Removal</li>
@@ -27,7 +27,7 @@ Specify any amount of details, or bring your own design entirely and we can prov
 <li>Custom Recurring Requests</li>
 
 </ul>
-<ul>
+<ul style="margin:.25em;padding:0;list-style-type: none;" >
 <li>2 hours website support</li>
 <li>Staff phone support</li>
 <li>Updates and minor additions</li>

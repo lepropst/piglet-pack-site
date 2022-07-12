@@ -1,20 +1,23 @@
-import { Card, CardContent, CardHeader } from '@mui/material';
+import CardContent from '@mui/material/CardContent';
+import Card from '@mui/material/Card';
+import CardHeader from '@mui/material/CardHeader';
 import Box from '@mui/material/Box';
-
 import Grid from '@mui/material/Grid';
-
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
-import { flexbox } from '@mui/system';
 import Markdown from 'markdown-to-jsx';
+import ContentCard from './ContentCard';
 
 type Props = {
   websiteServices: { title: string; price: string; content: string }[];
   serverServices: { title: string; price: string; content: string }[];
   projectServices: { title: string; price: string; content: string }[];
+  hostingService: { content: string };
 };
 export const Layout = (props: Props) => {
-  const { websiteServices, serverServices, projectServices } = props;
+  const { websiteServices, serverServices, projectServices, hostingService } =
+    props;
+
   return (
     <Box
       sx={{
@@ -50,8 +53,13 @@ export const Layout = (props: Props) => {
               specify any design or visual effect and keep the code for use
               later!
               <div style={{ height: '1em' }} />
-              <div style={{ display: 'flex', justifyContent: 'center' }}>
-                <ul style={{ margin: 0, padding: 0 }}>
+              <div
+                style={{
+                  display: 'flex',
+                  justifyContent: 'center',
+                }}
+              >
+                <ul style={{ margin: '.5em', padding: 0, listStyle: 'disc' }}>
                   <li>Basic SEO Optimization</li>
                   <li>Security Monitoring</li>
                   <li>Basic Malware Removal</li>
@@ -60,7 +68,7 @@ export const Layout = (props: Props) => {
                   <li>Cloud Backups</li>
                   <li>Custom Recurring Requests</li>
                 </ul>
-                <ul>
+                <ul style={{ margin: '.5em', padding: 0, listStyle: 'disc' }}>
                   <li>2 hours website support</li>
                   <li>Staff phone support</li>
                   <li>Updates and minor additions</li>
@@ -80,15 +88,12 @@ export const Layout = (props: Props) => {
             lg={4}
             key={`${e.title}-${i}`}
           >
-            <Card raised sx={{ padding: '1em' }}>
-              <CardHeader
-                title={e.title}
-                action={typeof e.price === 'number' ? `$${e.price}` : e.price}
-              />
-              <CardContent>
-                <Markdown>{e.content}</Markdown>
-              </CardContent>
-            </Card>
+            <ContentCard
+              title={e.title}
+              price={e.price}
+              description={e.content}
+              content={e.content}
+            />
           </Grid>
         ))}
 
@@ -112,7 +117,25 @@ export const Layout = (props: Props) => {
             }}
           />
         </Grid>
-
+        <Grid
+          item
+          xs={12}
+          sx={{
+            display: 'flex',
+            justifyContent: 'center',
+            backgroundImage:
+              'linear-gradient(to left, rgba(29, 124, 181, .05), rgba(29, 181, 163,.3))',
+          }}
+        >
+          Hosting Options
+        </Grid>
+        <Grid item xs={12}>
+          <Card>
+            <CardContent>
+              <Markdown>{hostingService.content}</Markdown>
+            </CardContent>
+          </Card>
+        </Grid>
         <Grid
           item
           xs={12}
@@ -139,15 +162,12 @@ export const Layout = (props: Props) => {
             key={`${e.title}-${i}`}
             sx={{ height: '100%' }}
           >
-            <Card raised sx={{ padding: '1em' }}>
-              <CardHeader
-                title={e.title}
-                action={typeof e.price === 'number' ? `$${e.price}` : e.price}
-              />
-              <CardContent>
-                <Markdown>{e.content}</Markdown>
-              </CardContent>
-            </Card>
+            <ContentCard
+              description={e.content}
+              title={e.title}
+              price={e.price}
+              content={e.content}
+            />
           </Grid>
         ))}
 
@@ -198,15 +218,12 @@ export const Layout = (props: Props) => {
         </Grid>
         {projectServices.map((e, i) => (
           <Grid item xs={12} md={6} lg={4} key={`${e.title}-${i}`}>
-            <Card raised sx={{ padding: '1em' }}>
-              <CardHeader
-                title={e.title}
-                action={typeof e.price === 'number' ? `$${e.price}` : e.price}
-              />
-              <CardContent>
-                <Markdown>{e.content}</Markdown>
-              </CardContent>
-            </Card>
+            <ContentCard
+              description={e.content}
+              title={e.title}
+              price={e.price}
+              content={e.content}
+            />
           </Grid>
         ))}
       </Grid>

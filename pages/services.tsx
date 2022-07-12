@@ -1,7 +1,4 @@
-import { Box, List, ListItem, Typography } from '@mui/material';
 import Layout from '../components/services';
-import { ReactNode } from 'react';
-import type { NextPage } from 'next';
 import { getContent } from '../lib/api';
 
 type Props = {
@@ -16,6 +13,7 @@ type Props = {
   website_service_01: { title: string; price: string; content: string };
   website_service_02: { title: string; price: string; content: string };
   website_service_03: { title: string; price: string; content: string };
+  hosting_service: { content: string };
 };
 
 export const Services = (props: Props) => {
@@ -38,6 +36,7 @@ export const Services = (props: Props) => {
         props.project_service_03,
         props.project_service_04,
       ]}
+      hostingService={props.hosting_service}
     />
   );
 };
@@ -97,6 +96,11 @@ export const getStaticProps = async () => {
     filename: 'website-service-03.md',
     fields: ['title', 'price', 'content'],
   });
+  const hosting_service = getContent({
+    directory: 'services',
+    filename: 'hosting-service.md',
+    fields: ['content'],
+  });
   return {
     props: {
       project_service_01,
@@ -110,6 +114,7 @@ export const getStaticProps = async () => {
       website_service_01,
       website_service_02,
       website_service_03,
+      hosting_service,
     },
   };
 };
