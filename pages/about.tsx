@@ -34,11 +34,16 @@ type Props = {
     author: { name: string };
     content: string;
   };
+
+  eliasProfile: {
+    content: string;
+  };
 };
 
 export const About = (props: Props) => {
   const {
     MissionStatementContent,
+    eliasProfile,
     whoWeAre,
     whatWeDo,
     whyWeDoIt,
@@ -74,6 +79,7 @@ export const About = (props: Props) => {
       whatWeDo={whatWeDo}
       whyWeDoIt={whyWeDoIt}
       MissionStatementContent={MissionStatementContent}
+      eliasProfile={eliasProfile.content}
     />
   );
 };
@@ -105,6 +111,11 @@ export const getStaticProps = async () => {
     filename: 'minority-message.md',
     fields: ['title', 'date', 'author', 'content'],
   });
+  const eliasProfile = getContent({
+    directory: 'about',
+    filename: 'eliasProfile.md',
+    fields: ['content'],
+  });
 
   return {
     props: {
@@ -113,6 +124,7 @@ export const getStaticProps = async () => {
       whoWeAre,
       whyWeDoIt,
       minorityMessage,
+      eliasProfile,
     },
   };
 };

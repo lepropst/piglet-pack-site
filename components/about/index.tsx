@@ -35,9 +35,11 @@ export type Props = {
     content: string;
   };
   image: string | null;
+  eliasProfile: string;
 };
 export const Layout = (props: Props) => {
   const {
+    eliasProfile,
     whoWeAre,
     whatWeDo,
     whyWeDoIt,
@@ -115,7 +117,7 @@ export const Layout = (props: Props) => {
         }}
       />
       {/* <MinorityMessage /> */}
-      <Profiles />
+      <Profiles eliasProfile={props.eliasProfile} />
     </Box>
   );
 };
