@@ -87,6 +87,7 @@ export const Home = (props: Props) => {
   return (
     <>
       <Head>
+        <title>Home of Piglet Pack, web development and design</title>
         <meta
           name="description"
           content="Home page of Piglet Pack, a web development and design company based in Fort Worth, Tx."

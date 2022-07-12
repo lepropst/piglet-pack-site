@@ -4,7 +4,7 @@ import Markdown from 'markdown-to-jsx';
 export const Profiles = (props: { eliasProfile: string }) => {
   return (
     <Box>
-      <Card noGutters>
+      <Card>
         <CardContent>
           <Markdown>{props.eliasProfile}</Markdown>
         </CardContent>

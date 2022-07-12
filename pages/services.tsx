@@ -21,6 +21,7 @@ export const Services = (props: Props) => {
   return (
     <>
       <Head>
+        <title>Web development services offered by Piglet Pack</title>
         <meta
           name="description"
           content="Web development and design services offered by Piglet Pack, a web development and design company based in Fort Worth, Tx."

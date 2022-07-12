@@ -6,9 +6,10 @@ export const PolicyPage: NextPage = () => {
   return (
     <>
       <Head>
+        <title>Policies for Piglet Pack services</title>
         <meta
           name="description"
-          content="Policy page of Piglet Pack, a web development and design company based in Fort Worth, Tx."
+          content="Policy page for the services rendered by Piglet Pack design based in Fort Worth, Tx."
         ></meta>
         <link rel="canonical" href="https://pigletpack.com/policies" />
       </Head>

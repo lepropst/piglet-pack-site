@@ -6,6 +6,7 @@ export const Contact: NextPage = () => {
   return (
     <>
       <Head>
+        <title>Contact web Piglet Pack</title>
         <meta
           name="description"
           content="Contact Piglet Pack, a web development and design company based in Fort Worth, Tx."
