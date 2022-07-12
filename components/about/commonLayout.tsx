@@ -24,38 +24,42 @@ export const CommonLayout = forwardRef(
     const visible = useIntersectionObserver({ root: null, ref: innerRef });
 
     return (
-      <Box
-        ref={ref}
-        {...props}
-        sx={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'flex-start',
-          minHeight: '90vh',
-          scrollSnapAlign: 'start',
-          scrollSnapMargin: '4rem',
-          backgroundColor: props.backgroundColor
-            ? props.backgroundColor
-            : 'inherit',
-        }}
-      >
-        <Box ref={innerRef}>
-          <Typography variant="h2">{props.title}</Typography>
+      <article>
+        <Box
+          ref={ref}
+          {...props}
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'flex-start',
+            minHeight: '90vh',
+            scrollSnapAlign: 'start',
+            scrollSnapMargin: '4rem',
+            backgroundColor: props.backgroundColor
+              ? props.backgroundColor
+              : 'inherit',
+          }}
+        >
+          <Box ref={innerRef}>
+            <Typography variant="h2">{props.title}</Typography>
 
-          <Fade in={visible} timeout={500}>
-            <Box
-              sx={{
-                marginL: '4rem',
-              }}
-            >
-              <Typography component="div">
-                <Markdown>{props.content}</Markdown>
-              </Typography>
-            </Box>
-          </Fade>
-          {props.image && <Image src={props.image.src} alt={props.image.alt} />}
+            <Fade in={visible} timeout={500}>
+              <Box
+                sx={{
+                  marginL: '4rem',
+                }}
+              >
+                <Typography component="div">
+                  <Markdown>{props.content}</Markdown>
+                </Typography>
+              </Box>
+            </Fade>
+            {props.image && (
+              <Image src={props.image.src} alt={props.image.alt} />
+            )}
+          </Box>
         </Box>
-      </Box>
+      </article>
     );
   }
 );

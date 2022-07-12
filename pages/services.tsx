@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import Layout from '../components/services';
 import { getContent } from '../lib/api';
 
@@ -18,26 +19,35 @@ type Props = {
 
 export const Services = (props: Props) => {
   return (
-    <Layout
-      serverServices={[
-        props.server_service_01,
-        props.server_service_02,
-        props.server_service_03,
-        props.server_service_04,
-      ]}
-      websiteServices={[
-        props.website_service_01,
-        props.website_service_02,
-        props.website_service_03,
-      ]}
-      projectServices={[
-        props.project_service_01,
-        props.project_service_02,
-        props.project_service_03,
-        props.project_service_04,
-      ]}
-      hostingService={props.hosting_service}
-    />
+    <>
+      <Head>
+        <meta
+          name="description"
+          content="Web development and design services offered by Piglet Pack, a web development and design company based in Fort Worth, Tx."
+        ></meta>
+        <link rel="canonical" href="https://pigletpack.com/services" />
+      </Head>
+      <Layout
+        serverServices={[
+          props.server_service_01,
+          props.server_service_02,
+          props.server_service_03,
+          props.server_service_04,
+        ]}
+        websiteServices={[
+          props.website_service_01,
+          props.website_service_02,
+          props.website_service_03,
+        ]}
+        projectServices={[
+          props.project_service_01,
+          props.project_service_02,
+          props.project_service_03,
+          props.project_service_04,
+        ]}
+        hostingService={props.hosting_service}
+      />
+    </>
   );
 };
 export const getStaticProps = async () => {

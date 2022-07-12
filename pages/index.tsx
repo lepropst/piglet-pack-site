@@ -8,6 +8,7 @@ import { useMemo, useRef } from 'react';
 
 import Layout from '../components/home';
 import { getContent } from '../lib/api';
+import Head from 'next/head';
 
 type Props = {
   welcome_message_01: {
@@ -84,16 +85,25 @@ export const Home = (props: Props) => {
     ref: welcomeRef,
   });
   return (
-    <Layout
-      welcome_message_01={welcome_message_01}
-      welcome_message_02={welcome_message_02}
-      welcome_message_03={welcome_message_03}
-      why_us_04={why_us_04}
-      why_us_03={why_us_03}
-      why_us_02={why_us_02}
-      why_us_01={why_us_01}
-      MissionStatementContent={MissionStatementContent}
-    />
+    <>
+      <Head>
+        <meta
+          name="description"
+          content="Home page of Piglet Pack, a web development and design company based in Fort Worth, Tx."
+        ></meta>
+        <link rel="canonical" href="https://pigletpack.com/" />
+      </Head>
+      <Layout
+        welcome_message_01={welcome_message_01}
+        welcome_message_02={welcome_message_02}
+        welcome_message_03={welcome_message_03}
+        why_us_04={why_us_04}
+        why_us_03={why_us_03}
+        why_us_02={why_us_02}
+        why_us_01={why_us_01}
+        MissionStatementContent={MissionStatementContent}
+      />
+    </>
   );
 };
 export default Home;

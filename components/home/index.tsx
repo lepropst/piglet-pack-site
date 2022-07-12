@@ -71,6 +71,9 @@ const PageBanner = ({
   MissionStatementContent: { content: string };
 }) => (
   <>
+    <h1 style={{ textAlign: 'center' }}>
+      Piglet Pack Web Development and Design
+    </h1>
     <Link
       sx={{
         display: 'flex',
@@ -118,9 +121,12 @@ export const Layout = (props: Props) => {
   });
 
   return (
-    <Box>
+    <main>
       {gStyles}
-      <PageBanner MissionStatementContent={MissionStatementContent} />
+      <section>
+        <PageBanner MissionStatementContent={MissionStatementContent} />
+      </section>
+
       <Box ref={welcomeRef}>
         <Grow
           in={initiate_welcome}
@@ -233,7 +239,9 @@ export const Layout = (props: Props) => {
             }}
           >
             <Typography component="div">
-              <Markdown>{why_us_03.content}</Markdown>
+              <article>
+                <Markdown>{why_us_03.content}</Markdown>
+              </article>
             </Typography>
           </Paper>
 
@@ -250,12 +258,14 @@ export const Layout = (props: Props) => {
             }}
           >
             <Typography component="div">
-              <Markdown>{why_us_04.content}</Markdown>
+              <article>
+                <Markdown>{why_us_04.content}</Markdown>
+              </article>
             </Typography>
           </Paper>
         </Box>
       </Box>
-    </Box>
+    </main>
   );
 };
 export default Layout;

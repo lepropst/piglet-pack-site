@@ -83,8 +83,13 @@ export const Layout = (props: Props) => {
         display: 'flex',
         flexDirection: 'column',
         height: 'auto',
+        alignItems: 'center',
       }}
     >
+      <h1 style={{ textAlign: 'center' }}>
+        About Piglet Pack
+        <br /> Web Development and Design
+      </h1>
       {inputGlobalStyles}
       <MissionStatementContainer
         content={MissionStatementContent.content}
@@ -117,7 +122,7 @@ export const Layout = (props: Props) => {
         }}
       />
       {/* <MinorityMessage /> */}
-      <Profiles eliasProfile={props.eliasProfile} />
+      <Profiles eliasProfile={eliasProfile} />
     </Box>
   );
 };

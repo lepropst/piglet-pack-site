@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { getContent } from '../lib/api';
 import { Layout } from '../components/about';
+import Head from 'next/head';
 
 type Props = {
   MissionStatementContent: {
@@ -72,15 +73,26 @@ export const About = (props: Props) => {
   }, [image]);
 
   return (
-    <Layout
-      minorityMessage={minorityMessage}
-      image={image}
-      whoWeAre={whoWeAre}
-      whatWeDo={whatWeDo}
-      whyWeDoIt={whyWeDoIt}
-      MissionStatementContent={MissionStatementContent}
-      eliasProfile={eliasProfile.content}
-    />
+    <>
+      <Head>
+        <title>Web Development and design by Piglet Pack</title>
+
+        <meta
+          name="description"
+          content="About page describing Piglet Pack, a web development and design company based in Fort Worth, Tx."
+        ></meta>
+        <link rel="canonical" href="https://pigletpack.com/about" />
+      </Head>
+      <Layout
+        minorityMessage={minorityMessage}
+        image={image}
+        whoWeAre={whoWeAre}
+        whatWeDo={whatWeDo}
+        whyWeDoIt={whyWeDoIt}
+        MissionStatementContent={MissionStatementContent}
+        eliasProfile={eliasProfile.content}
+      />
+    </>
   );
 };
 

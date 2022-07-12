@@ -1,10 +1,10 @@
-import { Box } from '@mui/material';
+import { Box, Button } from '@mui/material';
 
 export default function Footer() {
   return (
-    <Box
+    <footer
       id="footer"
-      sx={{
+      style={{
         borderTop: '0.3em solid rgba(238, 149, 224, 0.7)',
         position: 'relative',
         backgroundColor: '$dark',
@@ -13,10 +13,22 @@ export default function Footer() {
         padding: '0.5em',
         marginTop: 'auto',
         marginBottom: 0,
+        display: 'flex',
+        justifyContent: 'space-around',
       }}
     >
       © Elias Rangel
-    </Box>
+      <Button
+        variant="outlined"
+        onClick={(e) => {
+          e.preventDefault();
+          document.body.scrollTop = 0; // For Safari
+          document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+        }}
+      >
+        Back to Top
+      </Button>
+    </footer>
   );
 }
 
