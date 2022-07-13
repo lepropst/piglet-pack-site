@@ -17,7 +17,7 @@ export default function Footer() {
         justifyContent: 'space-around',
       }}
     >
-      © Elias Rangel
+      Contact us at 682-240-6691 or pigletpack@pm.me © Elias Rangel
       <Button
         variant="outlined"
         onClick={(e) => {
