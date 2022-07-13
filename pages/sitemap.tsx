@@ -1,6 +1,7 @@
 import React from 'react';
 import * as fs from 'fs';
-const BASE_URL = 'http://localhost:3000';
+import path from 'path';
+const BASE_URL = 'https://pigletpack.com';
 
 const Sitemap = () => {
   return null;
@@ -9,16 +10,12 @@ const Sitemap = () => {
 const staticPaths = fs
   .readdirSync('pages')
   .filter((staticPage) => {
-    return ![
-      'api',
-      '_app.js',
-      '_document.js',
-      '404.js',
-      'sitemap.xml.js',
-    ].includes(staticPage);
+    return !['api', '_app.tsx', '_document.tsx', 'sitemap.tsx'].includes(
+      staticPage
+    );
   })
   .map((staticPagePath) => {
-    return `${BASE_URL}/${staticPagePath}`;
+    return `${BASE_URL}/${path.parse(staticPagePath).name}`;
   });
 
 export const getServerSideProps = async (props: { res: any }) => {
