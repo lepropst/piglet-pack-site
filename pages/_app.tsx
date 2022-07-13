@@ -13,6 +13,7 @@ import { Suspense } from 'react';
 import Body from '../components/body/body';
 import createEmotionCache from '../utilities/createEmotionCache';
 import { CacheProvider, EmotionCache } from '@emotion/react';
+import Script from 'next/script';
 
 const clientSideEmotionCache = createEmotionCache();
 const DynamicHeader = dynamic(() => import('../components/header/header'), {
@@ -41,6 +42,21 @@ function MyApp({
   );
   return (
     <CacheProvider value={emotionCache}>
+      <Script
+        strategy="lazyOnload"
+        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
+      />
+
+      <Script id="google_analytics" strategy="lazyOnload">
+        {`
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments);}
+                    gtag('js', new Date());
+                    gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', {
+                    page_path: window.location.pathname,
+                    });
+                `}
+      </Script>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
