@@ -3,28 +3,35 @@
     <loc>https://pigletpack.com/about</loc>
     <changefreq>hourly</changefreq>
   </url>
+  
   <url>
     <loc>https://pigletpack.com/contact</loc>
     <changefreq>hourly</changefreq>
   </url>
+
 <url>
 <loc>https://pigletpack.com/services</loc>
 <changefreq>hourly</changefreq>
 </url>
+
     <url>
     <loc>https://pigletpack.com/policies</loc>
     <changefreq>hourly</changefreq>
   </url>
+
 <url>
-<loc>https://pigletpack.com/home</loc>
-<changefreq>hourly</changefreq>
+  <loc>https://pigletpack.com/home</loc>
+  <changefreq>hourly</changefreq>
 </url>
-    <url>
+
+  <url>
     <loc>https://pigletpack.com/index</loc>
     <changefreq>hourly</changefreq>
   </url>
+
 <url>
 <loc>https://pigletpack.com/</loc>
 <changefreq>hourly</changefreq>
 </url>
+
 </urlset>
