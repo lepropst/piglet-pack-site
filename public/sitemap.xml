@@ -1,37 +1,47 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<sitemap>
+
     <loc>https://pigletpack.com/about</loc>
-    <changefreq>hourly</changefreq>
-  </url>
 
-  <url>
+</sitemap>
+
+
+<sitemap>
     <loc>https://pigletpack.com/contact</loc>
-    <changefreq>hourly</changefreq>
-  </url>
 
-  <url>
+</sitemap>
+
+<sitemap>
     <loc>https://pigletpack.com/services</loc>
-    <changefreq>hourly</changefreq>
-  </url>
+</sitemap>
 
-  <url>
+<sitemap>
+
     <loc>https://pigletpack.com/policies</loc>
-    <changefreq>hourly</changefreq>
-  </url>
 
-  <url>
+</sitemap>
+
+
+<sitemap>
+
     <loc>https://pigletpack.com/home</loc>
-    <changefreq>hourly</changefreq>
-  </url>
 
-  <url>
+</sitemap>
+
+
+<sitemap>
+
     <loc>https://pigletpack.com/index</loc>
-    <changefreq>hourly</changefreq>
-  </url>
-  <url>
-    <loc>https://pigletpack.com/</loc>
-    <changefreq>hourly</changefreq>
-  </url>
 
-</urlset>
+</sitemap>
+
+<sitemap>
+
+    <loc>https://pigletpack.com/</loc>
+
+</sitemap>
+
+
+</sitemapindex>
+
+
