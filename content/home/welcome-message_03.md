@@ -5,4 +5,4 @@ author:
   name: Elias Rangel
 ---
 
-## We strive to relieve the work that is required when using the plethora of technnologies available to small business. Web development and initial site creation is only one side of our specialties. We are also able to masnage, advise upon, and deploy third party or custom services including serverless or SaaS platform services.
+## Piglet Pack's services are designed to relieve the stress and time required to manage the various technologies small businesses use. We provide support and solutions for traditional server management, website design, and hosting management services. We also provide services using serverless, SaaS, or cloud computing technologies.

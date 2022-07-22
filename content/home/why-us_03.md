@@ -5,4 +5,4 @@ author:
   name: Elias Rangel
 ---
 
-## Our services revolve around the idea that we provide only what our client needs. Our service plans and contracts are completely dynamic. This means that we can perform services as small as guidance, so that the client retains the most control and manages most aspects of the service. We can also completely set up and manage digital services so that the client can request any technology stack, but never have to get in the nitty gritty.
+## We focus on client needs. Services are designed from the ground up to service only what our clients need. Service plans and contracts remain flexible and completely dynamic allowing for greater control over what our clients want done. We can assume any role of management for your small business from full hosting and web presence management to simple user interface updates. Piglet Packs custom service plans truly allow clients control over the technology they use, the control they have, and the implementation methods chosen.

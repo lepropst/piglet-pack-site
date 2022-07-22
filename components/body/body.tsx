@@ -1,5 +1,5 @@
-import Container from "@mui/material/Container";
-import { ReactNode } from "react";
+import Container from '@mui/material/Container';
+import { ReactNode } from 'react';
 /* eslint-disable-next-line */
 export interface BodyProps {}
 export default function Body(props: { children: ReactNode | ReactNode[] }) {
@@ -7,7 +7,7 @@ export default function Body(props: { children: ReactNode | ReactNode[] }) {
     <Container
       id="body"
       maxWidth="xl"
-      sx={{ position: "relative", marginTop: "10vh", minHeight: "150vh" }}
+      sx={{ position: 'relative', minHeight: '150vh' }}
     >
       {props.children}
     </Container>

@@ -5,4 +5,4 @@ author:
   name: Elias Rangel
 ---
 
-## Piglet pack provides essential english and technological services. Our expertise allow us to offer well defiined services, as well as assess independent and unique situations to advise or act on what we can do accordingly.
+## Piglet Pack provides essential technology services designed to increase the efficiency of small businesses. We assess every situation as if it were our own content and provide detailed solutions that are efficient and affordable.
