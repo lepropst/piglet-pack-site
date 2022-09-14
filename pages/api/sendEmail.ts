@@ -31,28 +31,36 @@ export async function sendEmail(
 
   // Create promise and SNS service object
   console.log('creatig sns service objectt');
-  var publishTextPromise = new AWS.SNS({ apiVersion: '2010-03-31' })
-    .publish(params)
+  var publishTextPromise = await new AWS.SNS({ apiVersion: '2010-03-31' })
+    .publish(params, async function (err, data) {
+      if (err) {
+        console.log('SNS Push Failed:');
+        console.log(err.stack);
+        return;
+      }
+      console.log('SNS push suceeded: ' + data);
+      return data;
+    })
     .promise();
   console.log('handling results');
   // Handle promise's fulfilled/rejected states
 
-  publishTextPromise
-    .then(function (data) {
-      console.log('success');
-      console.log(
-        `Message ${params.Message} sent to the topic ${params.TopicArn}`
-      );
-      console.log('MessageID is ' + data.MessageId);
-      res.status(200);
-      mess = { message: `Success!    ${data.MessageId}` };
-    })
-    .catch(function (err) {
-      console.log('error');
-      console.log(err, err.stack);
-      res.status(400);
-      mess = { error: err.stack.toString() };
-    });
+  // publishTextPromise
+  //   .then(function (data) {
+  //     console.log('success');
+  //     console.log(
+  //       `Message ${params.Message} sent to the topic ${params.TopicArn}`
+  //     );
+  //     console.log('MessageID is ' + data.MessageId);
+  //     res.status(200);
+  //     mess = { message: `Success!    ${data.MessageId}` };
+  //   })
+  //   .catch(function (err) {
+  //     console.log('error');
+  //     console.log(err, err.stack);
+  //     res.status(400);
+  //     mess = { error: err.stack.toString() };
+  //   });
 
   console.log('sendig message');
   res.send(mess);
