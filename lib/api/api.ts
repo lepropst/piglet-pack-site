@@ -18,21 +18,17 @@ export function getContentDirectories(): string[] | false {
 }
 export function getContent(props: {
   directory: string;
-  filename?: string;
+  filename: string;
   fields: string[];
 }) {
   const { directory, filename } = props;
   const fullPath = path.resolve(postsDirectory, directory);
-  if (filename) {
-    return returnFileContents(fullPath, filename, props.fields);
-  } else {
-    const files = fs.readdirSync(fullPath);
-    const posts = files.map((file) =>
-      returnFileContents(fullPath, file, props.fields)
-    );
-    return posts;
-  }
+
+  return returnFileContents(fullPath, filename, props.fields);
 }
+export type Items = {
+  [key: string]: string;
+};
 function returnFileContents(
   fullPath: string,
   filename: string,
@@ -45,9 +41,7 @@ function returnFileContents(
   );
 
   const { data, content } = matter(fileContents);
-  type Items = {
-    [key: string]: string;
-  };
+
   const items: Items = {};
 
   // Ensure only the minimal needed data is exposed

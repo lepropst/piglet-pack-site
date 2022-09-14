@@ -1,92 +1,35 @@
 "use strict";
+/*
+ * ATTENTION: An "eval-source-map" devtool has been used.
+ * This devtool is neither made for production nor for readable output files.
+ * It uses "eval()" calls to create a separate source file with attached SourceMaps in the browser devtools.
+ * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
+ * or disable the default devtool with "devtool: false".
+ * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
+ */
 (() => {
 var exports = {};
-exports.id = 719;
-exports.ids = [719];
+exports.id = "pages/api/sendEmail";
+exports.ids = ["pages/api/sendEmail"];
 exports.modules = {
 
-/***/ 3211:
+/***/ "aws-sdk":
+/*!**************************!*\
+  !*** external "aws-sdk" ***!
+  \**************************/
+/***/ ((module) => {
+
+module.exports = require("aws-sdk");
+
+/***/ }),
+
+/***/ "(api)/./pages/api/sendEmail.ts":
+/*!********************************!*\
+  !*** ./pages/api/sendEmail.ts ***!
+  \********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-// ESM COMPAT FLAG
-__webpack_require__.r(__webpack_exports__);
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  "default": () => (/* binding */ api_sendEmail),
-  "sendEmail": () => (/* binding */ sendEmail)
-});
-
-;// CONCATENATED MODULE: external "aws-sdk"
-const external_aws_sdk_namespaceObject = require("aws-sdk");
-var external_aws_sdk_default = /*#__PURE__*/__webpack_require__.n(external_aws_sdk_namespaceObject);
-;// CONCATENATED MODULE: ./pages/api/sendEmail.ts
-
-function sendEmail(req, res) {
-    // let toArr = ["pigletpack@protonmail.com"];
-    let fromAddr = req.body.fromAddr;
-    let message = req.body.message;
-    let bodySubject = req.body.subject;
-    let mess = {};
-    // Set region
-    external_aws_sdk_default().config.update({
-        accessKeyId: process.env.ACCESS_KEY_ID,
-        secretAccessKey: process.env.SECRET_ACCESS_KEY,
-        region: "us-east-1"
-    });
-    const awsMessage = `${fromAddr}\n${bodySubject}\n\n${message}`;
-    console.log(awsMessage);
-    console.log(req.body);
-    // Create publish parameters
-    var params = {
-        Message: awsMessage /* required */ ,
-        TopicArn: "arn:aws:sns:us-east-1:911310303347:pigletpack"
-    };
-    // Create promise and SNS service object
-    var publishTextPromise = new (external_aws_sdk_default()).SNS({
-        apiVersion: "2010-03-31"
-    }).publish(params).promise();
-    // Handle promise's fulfilled/rejected states
-    publishTextPromise.then(function(data) {
-        console.log(`Message ${params.Message} sent to the topic ${params.TopicArn}`);
-        console.log("MessageID is " + data.MessageId);
-        res.status(200);
-        mess = {
-            message: `Success!    ${data.MessageId}`
-        };
-    }).catch(function(err) {
-        console.error(err, err.stack);
-        res.status(400);
-        mess = {
-            error: err.stack.toString()
-        };
-    });
-    res.send(mess);
-// sgMail
-//   .send({
-//     to: toArr,
-//     from: "pigletpack@protonmail.com",
-//     templateId: "d-59114bf0e5794c4dac9faa4f71e24d6b",
-//     dynamicTemplateData: {
-//       subject: bodySubject,
-//       fromAddr: fromAddr,
-//       message: message,
-//     },
-//     replyTo: "pigletpack@protonmail.com",
-//     subject: `[Lead from website] : ${bodySubject}`,
-//   })
-//   .then(
-//     () => {},
-//     (error) => {
-//       console.error(error);
-//       if (error.response) {
-//         console.error(error.response.body);
-//       }
-//     }
-//   );
-}
-/* harmony default export */ const api_sendEmail = (sendEmail);
-
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__),\n/* harmony export */   \"sendEmail\": () => (/* binding */ sendEmail)\n/* harmony export */ });\n/* harmony import */ var aws_sdk__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! aws-sdk */ \"aws-sdk\");\n/* harmony import */ var aws_sdk__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(aws_sdk__WEBPACK_IMPORTED_MODULE_0__);\n\nfunction sendEmail(req, res) {\n    // let toArr = [\"pigletpack@protonmail.com\"];\n    let fromAddr = req.body.fromAddr;\n    let message = req.body.message;\n    let bodySubject = req.body.subject;\n    let mess = {};\n    // Set region\n    aws_sdk__WEBPACK_IMPORTED_MODULE_0___default().config.update({\n        accessKeyId: process.env.ACCESS_KEY_ID,\n        secretAccessKey: process.env.SECRET_ACCESS_KEY,\n        region: \"us-east-1\"\n    });\n    const awsMessage = `${fromAddr}\\n${bodySubject}\\n\\n${message}`;\n    console.log(awsMessage);\n    console.log(req.body);\n    // Create publish parameters\n    var params = {\n        Message: awsMessage /* required */ ,\n        TopicArn: \"arn:aws:sns:us-east-1:911310303347:pigletpack\"\n    };\n    // Create promise and SNS service object\n    var publishTextPromise = new (aws_sdk__WEBPACK_IMPORTED_MODULE_0___default().SNS)({\n        apiVersion: \"2010-03-31\"\n    }).publish(params).promise();\n    // Handle promise's fulfilled/rejected states\n    publishTextPromise.then(function(data) {\n        console.log(`Message ${params.Message} sent to the topic ${params.TopicArn}`);\n        console.log(\"MessageID is \" + data.MessageId);\n        res.status(200);\n        mess = {\n            message: `Success!    ${data.MessageId}`\n        };\n    }).catch(function(err) {\n        console.error(err, err.stack);\n        res.status(400);\n        mess = {\n            error: err.stack.toString()\n        };\n    });\n    res.send(mess);\n// sgMail\n//   .send({\n//     to: toArr,\n//     from: \"pigletpack@protonmail.com\",\n//     templateId: \"d-59114bf0e5794c4dac9faa4f71e24d6b\",\n//     dynamicTemplateData: {\n//       subject: bodySubject,\n//       fromAddr: fromAddr,\n//       message: message,\n//     },\n//     replyTo: \"pigletpack@protonmail.com\",\n//     subject: `[Lead from website] : ${bodySubject}`,\n//   })\n//   .then(\n//     () => {},\n//     (error) => {\n//       console.error(error);\n//       if (error.response) {\n//         console.error(error.response.body);\n//       }\n//     }\n//   );\n}\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (sendEmail);\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,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QVU7QUFDVixRQUFRO0FBQ1IsT0FBTztDQUNSO0FBRUQsaUVBQWVSLFNBQVMsRUFBQyIsInNvdXJjZXMiOlsid2VicGFjazovL3BpZ2xldC1wYWNrLy4vcGFnZXMvYXBpL3NlbmRFbWFpbC50cz8xNjM2Il0sInNvdXJjZXNDb250ZW50IjpbIi8vIE5leHQuanMgQVBJIHJvdXRlIHN1cHBvcnQ6IGh0dHBzOi8vbmV4dGpzLm9yZy9kb2NzL2FwaS1yb3V0ZXMvaW50cm9kdWN0aW9uXG5pbXBvcnQgdHlwZSB7IE5leHRBcGlSZXF1ZXN0LCBOZXh0QXBpUmVzcG9uc2UgfSBmcm9tIFwibmV4dFwiO1xuXG5pbXBvcnQgQVdTIGZyb20gXCJhd3Mtc2RrXCI7XG50eXBlIERhdGEgPSB7XG4gIGVycm9yPzogc3RyaW5nIHwge307XG4gIG1lc3NhZ2U/OiBzdHJpbmc7XG59O1xuXG5leHBvcnQgZnVuY3Rpb24gc2VuZEVtYWlsKHJlcTogTmV4dEFwaVJlcXVlc3QsIHJlczogTmV4dEFwaVJlc3BvbnNlPERhdGE+KSB7XG4gIC8vIGxldCB0b0FyciA9IFtcInBpZ2xldHBhY2tAcHJvdG9ubWFpbC5jb21cIl07XG4gIGxldCBmcm9tQWRkciA9IHJlcS5ib2R5LmZyb21BZGRyO1xuICBsZXQgbWVzc2FnZSA9IHJlcS5ib2R5Lm1lc3NhZ2U7XG4gIGxldCBib2R5U3ViamVjdCA9IHJlcS5ib2R5LnN1YmplY3Q7XG4gIGxldCBtZXNzID0ge307XG4gIC8vIFNldCByZWdpb25cbiAgQVdTLmNvbmZpZy51cGRhdGUoe1xuICAgIGFjY2Vzc0tleUlkOiBwcm9jZXNzLmVudi5BQ0NFU1NfS0VZX0lELFxuICAgIHNlY3JldEFjY2Vzc0tleTogcHJvY2Vzcy5lbnYuU0VDUkVUX0FDQ0VTU19LRVksXG4gICAgcmVnaW9uOiBcInVzLWVhc3QtMVwiLFxuICB9KTtcbiAgY29uc3QgYXdzTWVzc2FnZSA9IGAke2Zyb21BZGRyfVxcbiR7Ym9keVN1YmplY3R9XFxuXFxuJHttZXNzYWdlfWA7XG4gIGNvbnNvbGUubG9nKGF3c01lc3NhZ2UpO1xuICBjb25zb2xlLmxvZyhyZXEuYm9keSk7XG4gIC8vIENyZWF0ZSBwdWJsaXNoIHBhcmFtZXRlcnNcbiAgdmFyIHBhcmFtcyA9IHtcbiAgICBNZXNzYWdlOiBhd3NNZXNzYWdlIC8qIHJlcXVpcmVkICovLFxuICAgIFRvcGljQXJuOiBcImFybjphd3M6c25zOnVzLWVhc3QtMTo5MTEzMTAzMDMzNDc6cGlnbGV0cGFja1wiLFxuICB9O1xuXG4gIC8vIENyZWF0ZSBwcm9taXNlIGFuZCBTTlMgc2VydmljZSBvYmplY3RcbiAgdmFyIHB1Ymxpc2hUZXh0UHJvbWlzZSA9IG5ldyBBV1MuU05TKHsgYXBpVmVyc2lvbjogXCIyMDEwLTAzLTMxXCIgfSlcbiAgICAucHVibGlzaChwYXJhbXMpXG4gICAgLnByb21pc2UoKTtcblxuICAvLyBIYW5kbGUgcHJvbWlzZSdzIGZ1bGZpbGxlZC9yZWplY3RlZCBzdGF0ZXNcbiAgcHVibGlzaFRleHRQcm9taXNlXG4gICAgLnRoZW4oZnVuY3Rpb24gKGRhdGEpIHtcbiAgICAgIGNvbnNvbGUubG9nKFxuICAgICAgICBgTWVzc2FnZSAke3BhcmFtcy5NZXNzYWdlfSBzZW50IHRvIHRoZSB0b3BpYyAke3BhcmFtcy5Ub3BpY0Fybn1gXG4gICAgICApO1xuICAgICAgY29uc29sZS5sb2coXCJNZXNzYWdlSUQgaXMgXCIgKyBkYXRhLk1lc3NhZ2VJZCk7XG4gICAgICByZXMuc3RhdHVzKDIwMCk7XG4gICAgICBtZXNzID0geyBtZXNzYWdlOiBgU3VjY2VzcyEgICAgJHtkYXRhLk1lc3NhZ2VJZH1gIH07XG4gICAgfSlcbiAgICAuY2F0Y2goZnVuY3Rpb24gKGVycikge1xuICAgICAgY29uc29sZS5lcnJvcihlcnIsIGVyci5zdGFjayk7XG4gICAgICByZXMuc3RhdHVzKDQwMCk7XG4gICAgICBtZXNzID0geyBlcnJvcjogZXJyLnN0YWNrLnRvU3RyaW5nKCkgfTtcbiAgICB9KTtcbiAgcmVzLnNlbmQobWVzcyk7XG4gIC8vIHNnTWFpbFxuICAvLyAgIC5zZW5kKHtcbiAgLy8gICAgIHRvOiB0b0FycixcbiAgLy8gICAgIGZyb206IFwicGlnbGV0cGFja0Bwcm90b25tYWlsLmNvbVwiLFxuICAvLyAgICAgdGVtcGxhdGVJZDogXCJkLTU5MTE0YmYwZTU3OTRjNGRhYzlmYWE0ZjcxZTI0ZDZiXCIsXG4gIC8vICAgICBkeW5hbWljVGVtcGxhdGVEYXRhOiB7XG4gIC8vICAgICAgIHN1YmplY3Q6IGJvZHlTdWJqZWN0LFxuICAvLyAgICAgICBmcm9tQWRkcjogZnJvbUFkZHIsXG4gIC8vICAgICAgIG1lc3NhZ2U6IG1lc3NhZ2UsXG4gIC8vICAgICB9LFxuICAvLyAgICAgcmVwbHlUbzogXCJwaWdsZXRwYWNrQHByb3Rvbm1haWwuY29tXCIsXG4gIC8vICAgICBzdWJqZWN0OiBgW0xlYWQgZnJvbSB3ZWJzaXRlXSA6ICR7Ym9keVN1YmplY3R9YCxcbiAgLy8gICB9KVxuICAvLyAgIC50aGVuKFxuICAvLyAgICAgKCkgPT4ge30sXG4gIC8vICAgICAoZXJyb3IpID0+IHtcbiAgLy8gICAgICAgY29uc29sZS5lcnJvcihlcnJvcik7XG5cbiAgLy8gICAgICAgaWYgKGVycm9yLnJlc3BvbnNlKSB7XG4gIC8vICAgICAgICAgY29uc29sZS5lcnJvcihlcnJvci5yZXNwb25zZS5ib2R5KTtcbiAgLy8gICAgICAgfVxuICAvLyAgICAgfVxuICAvLyAgICk7XG59XG5cbmV4cG9ydCBkZWZhdWx0IHNlbmRFbWFpbDtcbiJdLCJuYW1lcyI6WyJBV1MiLCJzZW5kRW1haWwiLCJyZXEiLCJyZXMiLCJmcm9tQWRkciIsImJvZHkiLCJtZXNzYWdlIiwiYm9keVN1YmplY3QiLCJzdWJqZWN0IiwibWVzcyIsImNvbmZpZyIsInVwZGF0ZSIsImFjY2Vzc0tleUlkIiwicHJvY2VzcyIsImVudiIsIkFDQ0VTU19LRVlfSUQiLCJzZWNyZXRBY2Nlc3NLZXkiLCJTRUNSRVRfQUNDRVNTX0tFWSIsInJlZ2lvbiIsImF3c01lc3NhZ2UiLCJjb25zb2xlIiwibG9nIiwicGFyYW1zIiwiTWVzc2FnZSIsIlRvcGljQXJuIiwicHVibGlzaFRleHRQcm9taXNlIiwiU05TIiwiYXBpVmVyc2lvbiIsInB1Ymxpc2giLCJwcm9taXNlIiwidGhlbiIsImRhdGEiLCJNZXNzYWdlSWQiLCJzdGF0dXMiLCJjYXRjaCIsImVyciIsImVycm9yIiwic3RhY2siLCJ0b1N0cmluZyIsInNlbmQiXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///(api)/./pages/api/sendEmail.ts\n");
 
 /***/ })
 
@@ -97,7 +40,7 @@ function sendEmail(req, res) {
 var __webpack_require__ = require("../../webpack-api-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = (__webpack_exec__(3211));
+var __webpack_exports__ = (__webpack_exec__("(api)/./pages/api/sendEmail.ts"));
 module.exports = __webpack_exports__;
 
 })();
