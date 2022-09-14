@@ -7,7 +7,10 @@ type Data = {
   message?: string;
 };
 
-export function sendEmail(req: NextApiRequest, res: NextApiResponse<Data>) {
+export async function sendEmail(
+  req: NextApiRequest,
+  res: NextApiResponse<Data>
+) {
   // let toArr = ["pigletpack@protonmail.com"];
   let fromAddr = req.body.fromAddr;
   let message = req.body.message;
@@ -20,8 +23,6 @@ export function sendEmail(req: NextApiRequest, res: NextApiResponse<Data>) {
     region: 'us-east-1',
   });
   const awsMessage = `${fromAddr}\n${bodySubject}\n\n${message}`;
-  console.log(awsMessage);
-  console.log(req.body);
   // Create publish parameters
   var params = {
     Message: awsMessage /* required */,
@@ -29,13 +30,16 @@ export function sendEmail(req: NextApiRequest, res: NextApiResponse<Data>) {
   };
 
   // Create promise and SNS service object
+  console.log('creatig sns service objectt');
   var publishTextPromise = new AWS.SNS({ apiVersion: '2010-03-31' })
     .publish(params)
     .promise();
-
+  console.log('handling results');
   // Handle promise's fulfilled/rejected states
+
   publishTextPromise
     .then(function (data) {
+      console.log('success');
       console.log(
         `Message ${params.Message} sent to the topic ${params.TopicArn}`
       );
@@ -44,10 +48,13 @@ export function sendEmail(req: NextApiRequest, res: NextApiResponse<Data>) {
       mess = { message: `Success!    ${data.MessageId}` };
     })
     .catch(function (err) {
+      console.log('error');
       console.log(err, err.stack);
       res.status(400);
       mess = { error: err.stack.toString() };
     });
+
+  console.log('sendig message');
   res.send(mess);
 }
 
