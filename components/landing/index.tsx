@@ -1,13 +1,7 @@
-import { Button, CardContent, Grid } from '@mui/material';
+import { CardContent } from '@mui/material';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
-
-import CardHeader from '@mui/material/CardHeader';
-
 import Markdown from 'markdown-to-jsx';
-import { ReactNode, useEffect, useState } from 'react';
-import { Items } from '../../lib';
-import { useTheme } from '../../utilities/styling';
 import Slide from '../common/Slide';
 
 export type Props = {

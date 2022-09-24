@@ -1,5 +1,7 @@
+import { Typography } from '@mui/material';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
+import Link from 'next/link';
 import { ReactNode, useState } from 'react';
 import { useTheme } from '../../utilities/styling';
 
@@ -54,17 +56,27 @@ export function Slide(props: Props) {
           onClick={decrement}
           disabled={visible === 0}
         >
-          Previous
+          <Typography>Previous</Typography>
         </Button>
-
-        <Button
-          variant="contained"
-          color="success"
-          onClick={increment}
-          disabled={visible >= props.slides.length - 1}
-        >
-          Next
-        </Button>
+        {visible >= props.slides.length - 1 ? (
+          <Button variant="contained" color="success">
+            <Link
+              style={{ textDecoration: 'none', color: 'inherit' }}
+              href="/home"
+            >
+              <Typography>Home</Typography>
+            </Link>
+          </Button>
+        ) : (
+          <Button
+            variant="contained"
+            color="success"
+            onClick={increment}
+            disabled={visible >= props.slides.length - 1}
+          >
+            <Typography>Next</Typography>
+          </Button>
+        )}
       </Box>
     </Box>
   );
