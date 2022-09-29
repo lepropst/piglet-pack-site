@@ -7,7 +7,7 @@ export default function Body(props: { children: ReactNode | ReactNode[] }) {
     <Container
       id="body"
       maxWidth="xl"
-      sx={{ position: 'relative', minHeight: '150vh' }}
+      sx={{ position: 'relative', minHeight: 'xl' }}
     >
       {props.children}
     </Container>
