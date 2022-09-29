@@ -6,5 +6,7 @@ export const getInitialLocale = () => {
   const browserLanguage = browserLocale.split('-')[0];
   const possibleLocales = [previousLocale, browserLocale, browserLanguage];
 
-  return possibleLocales.find((locale) => findLocale(locale)) ?? defaultLocale;
+  return possibleLocales.length > 0
+    ? possibleLocales.find((locale: any) => findLocale(locale))
+    : defaultLocale;
 };

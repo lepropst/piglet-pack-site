@@ -9,7 +9,7 @@ type PageHeadProps = {
 
 export const PageHead = ({ page }: PageHeadProps) => {
   // const seo = page.fields.seo.fields;
-  const { description = '', keywords = [], title = page.fields.title } = seo;
+  const { title } = page.fields;
   // const robots = [
   //   seo.no_index === true ? 'noindex' : undefined,
   //   seo.no_follow === true ? 'nofollow' : undefined,
@@ -19,12 +19,12 @@ export const PageHead = ({ page }: PageHeadProps) => {
     <Head>
       <title>{title}</title>
       {/* {robots.length > 0 && <meta name="robots" content={robots.join(', ')} />} */}
-      {description.trim() !== '' && (
+      {/* {description.trim() !== '' && (
         <meta name="description" content={description} key="description" />
-      )}
-      {keywords.length > 0 && (
+      )} */}
+      {/* {keywords.length > 0 && (
         <meta name="keywords" content={keywords.join(',')} />
-      )}
+      )} */}
     </Head>
   );
 };

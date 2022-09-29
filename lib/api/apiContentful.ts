@@ -35,10 +35,10 @@ export async function getPage(params: GetPageParams) {
   const query = getPageQuery(params);
 
   console.log(query);
-  const { items } = await getClient(
+  const result = await getClient(
     params.preview ? params.preview : false
   ).getEntry(params.slug);
-  const page = items;
+  const page = result;
 
   return page ? parsePage(page) : null;
 }

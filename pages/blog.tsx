@@ -2,13 +2,6 @@ import { Button, Typography } from '@mui/material';
 import Container from '@mui/system/Container';
 import Head from 'next/head';
 import Box from '@mui/system/Box';
-import {
-  StoryblokComponent,
-  getStoryblokApi,
-  apiPlugin,
-  storyblokInit,
-  Story,
-} from '@storyblok/react';
 import { getPagesOfType } from '../lib/api/apiContentful';
 import { TypePage } from '../lib/api/types';
 import Link from 'next/link';

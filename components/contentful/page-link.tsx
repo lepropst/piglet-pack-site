@@ -1,9 +1,9 @@
 import React from 'react';
 import cn from 'classnames';
 
-import { TypePage } from 'lib/types';
-import { useNavigation } from 'lib/useNavigation';
-import { Link } from 'components/link';
+import { TypePage } from '../../lib/api/types';
+import { useNavigation } from '../../lib/api/useNavigation';
+import { Link } from './link';
 
 export interface PageLinkProps {
   page: TypePage;
