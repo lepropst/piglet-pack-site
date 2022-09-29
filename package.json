@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "setup": "node ./contentful/setup.js"
+    "setup": "node ./contentful/setup.js",
+    "generate-types": "npx cf-content-types-generator -s $CF_SPACE_ID -t $CF_CMA_TOKEN -o src/lib/generated-types"
+
   },
   "dependencies": {
     "@contentful/rich-text-plain-text-renderer": "^15.12.1",

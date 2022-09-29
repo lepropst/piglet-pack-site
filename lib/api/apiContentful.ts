@@ -26,19 +26,19 @@ type GetPageParams = {
 const getPageQuery = (params: GetPageParams) => ({
   limit: 1,
   include: 10,
-
-  'fields.slug': params.slug,
-  content_type: params.pageContentType,
+  'fields.title': params.slug,
+  contentType: params.pageContentType,
 });
 
 export async function getPage(params: GetPageParams) {
   const query = getPageQuery(params);
 
   console.log(query);
+  console.log(params.slug);
   const result = await getClient(
     params.preview ? params.preview : false
-  ).getEntry(params.slug);
-  const page = result;
+  ).getEntries(query);
+  const page = result.items[0];
 
   return page ? parsePage(page) : null;
 }
