@@ -9,13 +9,14 @@ import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import type { AppProps } from 'next/app';
 import dynamic from 'next/dynamic';
-import { Suspense } from 'react';
+import { Suspense, useEffect } from 'react';
 import Body from '../components/body/body';
 import createEmotionCache from '../utilities/createEmotionCache';
 import { CacheProvider, EmotionCache } from '@emotion/react';
 import Script from 'next/script';
-
+import { pageview } from '../lib/google/ga';
 import { apiPlugin, storyblokInit } from '@storyblok/react';
+import { useRouter } from 'next/router';
 
 const clientSideEmotionCache = createEmotionCache();
 const DynamicHeader = dynamic(() => import('../components/header/header'), {
@@ -31,6 +32,22 @@ function MyApp({
   pageProps,
   emotionCache = clientSideEmotionCache,
 }: AppProps & { emotionCache?: EmotionCache }) {
+  const router = useRouter();
+  useEffect(() => {
+    const handleRouteChange = (url: string) => {
+      pageview(url);
+    };
+    //When the component is mounted, subscribe to router changes
+    //and log those page views
+    router.events.on('routeChangeComplete', handleRouteChange);
+
+    // If the component is unmounted, unsubscribe
+    // from the event with the `off` method
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange);
+    };
+  }, [router.events]);
+
   const { colorMode, theme } = useTheme();
   const gStyles = (
     <GlobalStyles
