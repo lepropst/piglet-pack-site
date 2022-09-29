@@ -23,7 +23,7 @@ export function Slide(props: Props) {
     <Box
       sx={{
         width: '100%',
-        height: '100%',
+        // height: '100%',
         bottom: 0,
         margin: 'auto',
         '&::before': {

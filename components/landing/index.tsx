@@ -9,7 +9,14 @@ export type Props = {
 };
 export function Layout(props: Props) {
   const SlideObject = (props: { title: string; content: string }) => (
-    <Card sx={{ height: '100%', display: 'flex', alignItems: 'center' }}>
+    <Card
+      sx={{
+        height: '100%',
+        display: 'flex',
+
+        overflow: 'auto',
+      }}
+    >
       <CardContent sx={{ marginX: '3em' }}>
         <Markdown>{props.content}</Markdown>
       </CardContent>

@@ -15,6 +15,8 @@ import createEmotionCache from '../utilities/createEmotionCache';
 import { CacheProvider, EmotionCache } from '@emotion/react';
 import Script from 'next/script';
 
+import { apiPlugin, storyblokInit } from '@storyblok/react';
+
 const clientSideEmotionCache = createEmotionCache();
 const DynamicHeader = dynamic(() => import('../components/header/header'), {
   suspense: true,
