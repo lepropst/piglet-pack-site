@@ -38,7 +38,7 @@ export default function Blog(props: Props) {
         <title>Blog</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
+      <h1>Blog of Piglet Pack</h1>
       <List>
         {props.allPosts.map((e: any, i: number) => (
           <CustomBlogPosting item={e} key={`${e.title}-${i}`} />
