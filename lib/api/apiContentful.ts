@@ -1,62 +1,134 @@
-import { createClient } from 'contentful';
+const POST_GRAPHQL_FIELDS = `
 
-import { parsePage } from './pageParsers';
-type Locale = string;
+title
+coverImage {
+  ... on Image {
+    image {
+      url
+    }
+  }
 
-const client = createClient({
-  space: process.env.CONTENTFUL_SPACE_ID || '',
-  accessToken: process.env.CONTENTFUL_ACCESS_TOKEN || '',
-});
+}
+dateCreated
+author {
+  name
 
-const previewClient = createClient({
-  space: process.env.CONTENTFUL_SPACE_ID || '',
-  accessToken: process.env.CONTENTFUL_ACCESS_TOKEN || '',
-  host: 'preview.contentful.com',
-});
+}
+description
+content {
+  json
+  links {
+    assets {
+      block {
+        sys {
+          id
+        }
+        url
+        description
+      }
+    }
+  }
+}
+`;
 
-const getClient = (preview: boolean) => (preview ? previewClient : client);
-
-type GetPageParams = {
-  slug: string;
-
-  pageContentType: string;
-  preview?: boolean;
-};
-
-const getPageQuery = (params: GetPageParams) => ({
-  limit: 1,
-  include: 10,
-  'fields.title': params.slug,
-  contentType: params.pageContentType,
-});
-
-export async function getPage(params: GetPageParams) {
-  const query = getPageQuery(params);
-
-  console.log(query);
-  console.log(params.slug);
-  const result = await getClient(
-    params.preview ? params.preview : false
-  ).getEntries(query);
-  const page = result.items[0];
-
-  return page ? parsePage(page) : null;
+async function fetchGraphQL(query: string, preview = false) {
+  return fetch(
+    `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}`,
+    {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${
+          preview
+            ? process.env.CONTENTFUL_PREVIEW_ACCESS_TOKEN
+            : process.env.CONTENTFUL_ACCESS_TOKEN
+        }`,
+      },
+      body: JSON.stringify({ query }),
+    }
+  ).then((response) => response.json());
 }
 
-type GetPagesOfTypeParams = {
-  pageContentType: string;
-  preview?: boolean;
-};
+function extractPost(fetchResponse: any) {
+  return fetchResponse?.data?.blogPostCollection?.items?.[0];
+}
 
-export async function getPagesOfType(params: GetPagesOfTypeParams) {
-  const { pageContentType, preview } = params;
-  const client = getClient(preview ? preview : false);
+function extractPostEntries(fetchResponse: any) {
+  return fetchResponse?.data?.blogPostCollection?.items;
+}
 
-  const { items: pages } = await client.getEntries({
-    limit: 100,
+export async function getPreviewPostBySlug(slug: string) {
+  const entry = await fetchGraphQL(
+    `query {
+      blogPostCollection(where: { title: "${slug}" }, preview: true, limit: 1) {
+        items {
+          ${POST_GRAPHQL_FIELDS}
+        }
+      }
+    }`,
+    true
+  );
+  return extractPost(entry);
+}
 
-    content_type: pageContentType,
-  });
+export async function getAllPostsWithSlug() {
+  const entries = await fetchGraphQL(
+    `query {
+      blogPostCollection(where: { title_exists: true }, order: date_DESC) {
+        items {
+          ${POST_GRAPHQL_FIELDS}
+        }
+      }
+    }`
+  );
+  return extractPostEntries(entries);
+}
 
-  return pages ? pages.map((page) => parsePage(page)) : [];
+export async function getAllPostsForHome(preview: boolean) {
+  console.log('getting all posts for home');
+  const entries = await fetchGraphQL(
+    `query {
+      blogPostCollection(order: dateCreated_DESC, preview: ${
+        preview ? 'true' : 'false'
+      }) {
+        items {
+          ${POST_GRAPHQL_FIELDS}
+        }
+      }
+    }`,
+    preview
+  );
+  console.log(entries);
+  return extractPostEntries(entries);
+}
+
+export async function getPostAndMorePosts(slug: string, preview: boolean) {
+  const entry = await fetchGraphQL(
+    `query {
+      blogPostCollection(where: { title: "${slug}" }, preview: ${
+      preview ? 'true' : 'false'
+    }, limit: 1) {
+        items {
+          ${POST_GRAPHQL_FIELDS}
+        }
+      }
+    }`,
+    preview
+  );
+  const entries = await fetchGraphQL(
+    `query {
+      blogPostCollection(where: { title_not_in: "${slug}" }, order: date_DESC, preview: ${
+      preview ? 'true' : 'false'
+    }, limit: 2) {
+        items {
+          ${POST_GRAPHQL_FIELDS}
+        }
+      }
+    }`,
+    preview
+  );
+  return {
+    post: extractPost(entry),
+    morePosts: extractPostEntries(entries),
+  };
 }

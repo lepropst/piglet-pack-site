@@ -12,7 +12,7 @@ const nextConfig = {
     ];
   },
   images: {
-    domains: ['ik.imagekit.io'],
+    domains: ['ik.imagekit.io', 'images.ctfassets.net'],
   },
 };
 

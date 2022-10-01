@@ -8,7 +8,8 @@ export interface TypeBlogPostFields {
     title?: Contentful.EntryFields.Symbol;
     content: CFRichTextTypes.Block | CFRichTextTypes.Inline;
     id?: Contentful.EntryFields.Integer;
-    coverImage?: Contentful.Asset;
+    coverImage?: Contentful.Entry<Record<string, any>>;
+    description?: Contentful.EntryFields.Symbol;
 }
 
 export type TypeBlogPost = Contentful.Entry<TypeBlogPostFields>;

@@ -12,7 +12,7 @@ export const ComponentContentTypes = {
 
 export const PageContentTypes = {
   HelpDeskArticle: 'page_help_center_article',
-  LandingPage: 'page_landing',
+  BlogPost: 'Blog Post',
 };
 
 export const fallbackImage = {

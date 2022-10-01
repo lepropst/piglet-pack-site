@@ -31,7 +31,6 @@ function CustomHeaderLink(props: {
             router.pathname.toLowerCase() === props.to ? 'underline' : 'none',
           color: 'inherit',
           marginX: '1em',
-
           '&:hover': { textDecoration: 'underline', cursor: 'pointer' },
         }}
       >
@@ -60,6 +59,7 @@ export default function Header() {
         flexDirection: 'column',
         justifyContent: 'flex-start',
         alignItems: 'center',
+        marginBottom: '1em',
         width: '100vw',
       }}
     >
@@ -98,6 +98,7 @@ export default function Header() {
               vertical: 'bottom',
               horizontal: 'center',
             }}
+            sx={{ marginBottom: '1em' }}
             transformOrigin={{
               vertical: 'top',
               horizontal: 'center',

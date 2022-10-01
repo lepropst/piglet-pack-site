@@ -1,20 +1,31 @@
-import { Button, Typography } from '@mui/material';
+import { Button, Divider, List, ListItem, Typography } from '@mui/material';
 import Container from '@mui/system/Container';
 import Head from 'next/head';
 import Box from '@mui/system/Box';
-import { getPagesOfType } from '../lib/api/apiContentful';
+import { getAllPostsForHome } from '../lib/api/apiContentful';
 import { TypePage } from '../lib/api/types';
 import Link from 'next/link';
+import { TypeBlogPost, TypeBlogPostFields } from '../lib/api/generated-types';
 
 export type Props = { preview: boolean; allPosts: any[] };
-const CustomBlogPosting = (props: { item: TypePage }) => {
+const CustomBlogPosting = (props: { item: TypeBlogPostFields }) => {
   const { item } = props;
   return (
-    <Box sx={{ display: 'flex', flexDirection: 'row' }}>
-      <Button sx={{ textDecoration: 'none' }}>
-        <Link href={`/posts/${item.fields.title}`}>{item.fields.title}</Link>
-      </Button>
-    </Box>
+    <ListItem divider>
+      <Box
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'start',
+          justifyContent: 'start',
+        }}
+      >
+        <Button sx={{ textDecoration: 'none' }}>
+          <Link href={`/posts/${item.title}`}>{item.title}</Link>
+        </Button>
+        <Typography>{item.description}</Typography>
+      </Box>
+    </ListItem>
   );
 };
 export default function Blog(props: Props) {
@@ -28,19 +39,17 @@ export default function Blog(props: Props) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Box sx={{ display: 'flex', flexDirection: 'column' }}>
-        {props.allPosts.map((e: TypePage, i: number) => (
-          <CustomBlogPosting item={e} key={`${e.fields.title}-${i}`} />
+      <List>
+        {props.allPosts.map((e: any, i: number) => (
+          <CustomBlogPosting item={e} key={`${e.title}-${i}`} />
         ))}
-      </Box>
+      </List>
     </Container>
   );
 }
 export async function getStaticProps({ preview = false }) {
-  var allPosts = await getPagesOfType({
-    pageContentType: 'blogPost',
-  });
-  allPosts.map((e) => console.log(e.fields.title));
+  var allPosts = await getAllPostsForHome(false);
+  console.log(allPosts);
 
   if (allPosts == undefined) allPosts = [];
   return {

@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "setup": "node ./contentful/setup.js",
-    "generate-types": "npx cf-content-types-generator -s $CF_SPACE_ID -t $CF_CMA_TOKEN -o src/lib/generated-types"
+    "generate-types": "npx cf-content-types-generator -s $CF_SPACE_ID -t $CF_CMA_TOKEN -o lib/api/generated-types"
 
   },
   "dependencies": {

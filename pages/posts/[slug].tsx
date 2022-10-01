@@ -1,16 +1,14 @@
 import React from 'react';
 import ErrorPage from 'next/error';
 
-import { getPage } from '../../lib/api/apiContentful';
+import { getPostAndMorePosts } from '../../lib/api/apiContentful';
 import { isPreviewEnabled } from '../../lib/api/preview';
-import { PageHead } from '../../components/contentful/page-head';
-import { PageContentTypes } from '../../lib/api/constants';
-import { TypePage_landing } from '../../lib/api/types';
-import { BlockRenderer } from '../../components/contentful/renderer/block-renderer';
-import { withLocale } from '../../lib/api/translations';
+
+import { TypeBlogPostFields } from '../../lib/api/generated-types';
+import Post from '../../components/contentful/post';
 
 type LandingProps = {
-  page: TypePage_landing;
+  page: TypeBlogPostFields;
 };
 
 export default function Landing({ page }: LandingProps) {
@@ -18,14 +16,9 @@ export default function Landing({ page }: LandingProps) {
     return <ErrorPage statusCode={404} />;
   }
 
-  // eslint-disable-next-line no-unsafe-optional-chaining
-  const { hero, sections = [] } = page.fields;
-
   return (
     <div className="w-full pb-16 lg:pb-24">
-      <PageHead page={page} />
-      <BlockRenderer block={hero} />
-      <BlockRenderer block={sections} />
+      <Post page={page} />
     </div>
   );
 }
@@ -37,13 +30,9 @@ export const getServerSideProps = async (props: {
   const { params, query } = props;
   const slug = String(params?.slug ?? '/');
   const preview = isPreviewEnabled(query);
-  const page = await getPage({
-    slug,
-    preview,
-    pageContentType: PageContentTypes.LandingPage,
-  });
+  const pageAndMore = await getPostAndMorePosts(slug, preview);
 
   return {
-    props: { page },
+    props: { page: pageAndMore.post },
   };
 };
