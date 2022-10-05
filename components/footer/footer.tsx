@@ -9,7 +9,7 @@ export default function Footer() {
         position: 'relative',
         backgroundColor: '$dark',
         width: '100%',
-        height: '3em',
+        height: '4em',
         padding: '0.5em',
         marginTop: 'auto',
         marginBottom: 0,
