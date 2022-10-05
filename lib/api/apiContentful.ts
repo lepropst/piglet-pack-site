@@ -60,7 +60,7 @@ function extractPostEntries(fetchResponse: any) {
 export async function getPreviewPostBySlug(slug: string) {
   const entry = await fetchGraphQL(
     `query {
-      blogPostCollection(where: { title: "${slug}" }, preview: true, limit: 1) {
+      blogPostCollection(where: { title: "${slug}" }, limit: 20, preview: true, limit: 1) {
         items {
           ${POST_GRAPHQL_FIELDS}
         }
@@ -74,7 +74,7 @@ export async function getPreviewPostBySlug(slug: string) {
 export async function getAllPostsWithSlug() {
   const entries = await fetchGraphQL(
     `query {
-      blogPostCollection(where: { title_exists: true }, order: date_DESC) {
+      blogPostCollection(where: { title_exists: true }, limit: 20, order: date_DESC) {
         items {
           ${POST_GRAPHQL_FIELDS}
         }
@@ -88,7 +88,7 @@ export async function getAllPostsForHome(preview: boolean) {
   console.log('getting all posts for home');
   const entries = await fetchGraphQL(
     `query {
-      blogPostCollection(order: dateCreated_DESC, preview: ${
+      blogPostCollection(order: dateCreated_DESC, limit: 20, preview: ${
         preview ? 'true' : 'false'
       }) {
         items {
@@ -105,7 +105,7 @@ export async function getAllPostsForHome(preview: boolean) {
 export async function getPostAndMorePosts(slug: string, preview: boolean) {
   const entry = await fetchGraphQL(
     `query {
-      blogPostCollection(where: { title: "${slug}" }, preview: ${
+      blogPostCollection(where: { title: "${slug}" }, limit: 20, preview: ${
       preview ? 'true' : 'false'
     }, limit: 1) {
         items {
@@ -117,7 +117,7 @@ export async function getPostAndMorePosts(slug: string, preview: boolean) {
   );
   const entries = await fetchGraphQL(
     `query {
-      blogPostCollection(where: { title_not_in: "${slug}" }, order: date_DESC, preview: ${
+      blogPostCollection(where: { title_not_in: "${slug}" }, limit: 20, order: date_DESC, preview: ${
       preview ? 'true' : 'false'
     }, limit: 2) {
         items {
