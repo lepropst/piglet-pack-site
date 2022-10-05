@@ -19,12 +19,14 @@ function CustomHeaderLink(props: {
   to: string;
   noactive?: 0 | 1;
   active?: boolean;
+  onClick: () => void;
 }) {
   const router = useRouter();
 
   return (
     <Link href={props.to}>
       <Typography
+        onClick={props.onClick}
         variant="h5"
         sx={{
           textDecoration:
@@ -63,7 +65,7 @@ export default function Header() {
         width: '100vw',
       }}
     >
-      <CustomHeaderLink key={202} noactive={0} to="/">
+      <CustomHeaderLink key={202} noactive={0} to="/" onClick={() => null}>
         Piglet Pack
       </CustomHeaderLink>
       <Container>
@@ -108,10 +110,12 @@ export default function Header() {
             }}
           >
             {pages.map((e: string, i: number) => (
-              <MenuItem key={`${e}-${i}`} onClick={handleClose}>
+              <MenuItem key={`${e}-${i}`}>
                 <CustomHeaderLink
                   noactive={e.toLowerCase() === 'home' ? 1 : 0}
                   to={'/' + e.toLowerCase()}
+                  onClick={handleClose}
+                  key={`${e}-${i}`}
                 >
                   {e}
                 </CustomHeaderLink>
@@ -133,6 +137,7 @@ export default function Header() {
                 key={`${e}-${i}`}
                 noactive={e.toLowerCase() === 'home' ? 1 : 0}
                 to={'/' + e.toLowerCase()}
+                onClick={() => null}
               >
                 {e}
               </CustomHeaderLink>
