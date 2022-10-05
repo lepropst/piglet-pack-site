@@ -108,7 +108,7 @@ export default function Header() {
             }}
           >
             {pages.map((e: string, i: number) => (
-              <MenuItem key={`${e}-${i}`}>
+              <MenuItem key={`${e}-${i}`} onClick={handleClose}>
                 <CustomHeaderLink
                   noactive={e.toLowerCase() === 'home' ? 1 : 0}
                   to={'/' + e.toLowerCase()}
