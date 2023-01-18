@@ -17,7 +17,10 @@ export default function Footer() {
         justifyContent: 'space-around',
       }}
     >
-      Contact us at 682-240-6691 or pigletpack@pm.me © Elias Rangel
+      <span>
+        Contact me at eliaszeus.rangel@gmail.com or send me a messaage with my{' '}
+        <a href="pigletpack.com/contact">contact form</a> © Elias Rangel
+      </span>
       <Button
         variant="outlined"
         onClick={(e) => {

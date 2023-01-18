@@ -7,4 +7,4 @@ author:
 
 # Mission Statement
 
-## Piglet Pack offers professional web development services that focus on optimization of professional communication across various platforms. Both client-to-developer and user-to-content interaction benefit from increased accessibility standards. Our Piglet Pack priority is to aid in the collaborative development of effective and accessible communication that benefits all parties.
+## I strive to be professional, creative, and efficient. I maintain an emphasis on accessibility throughout my work and always look into the various aspects that affect the products I work on in that regard. My objective is to facilitate collaborative development of effective and accessible solutions.

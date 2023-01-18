@@ -1,17 +1,10 @@
-export const pages = [
-  'Home',
-  'About',
-  'Services',
-  'Contact',
-  'Policies',
-  'Blog',
-] as const;
+export const pages = ['Home', 'About', 'Examples', 'Contact', 'Blog'] as const;
 export const routes = {
   home: '/home',
   about: '/about',
-  services: '/services',
+  services: '/examples',
   contact: '/contact',
-  policies: '/policies',
+
   blog: '/blog',
 };
 

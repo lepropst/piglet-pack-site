@@ -13,9 +13,7 @@ import { Suspense, useEffect } from 'react';
 import Body from '../components/body/body';
 import createEmotionCache from '../utilities/createEmotionCache';
 import { CacheProvider, EmotionCache } from '@emotion/react';
-import Script from 'next/script';
 import { pageview } from '../lib/google/ga';
-import { apiPlugin, storyblokInit } from '@storyblok/react';
 import { useRouter } from 'next/router';
 
 const clientSideEmotionCache = createEmotionCache();

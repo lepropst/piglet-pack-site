@@ -1,39 +1,36 @@
-import { CardContent } from '@mui/material';
-import Box from '@mui/material/Box';
+import CardContent from '@mui/material/CardContent';
+
+import Container from '@mui/material/Card';
+
 import Card from '@mui/material/Card';
-import Container from '@mui/system/Container';
+
 import Markdown from 'markdown-to-jsx';
-import Slide from '../common/Slide';
 
 export type Props = {
-  sections: { title: string; content: string }[];
+  section: { title: string; content: string };
 };
 export function Layout(props: Props) {
-  const SlideObject = (props: { title: string; content: string }) => (
-    <Card
-      sx={{
-        position: 'relative',
-        height: '100%',
-        display: 'flex',
-        overflow: 'auto',
-      }}
-    >
-      <CardContent sx={{ marginX: '3em' }}>
-        <Markdown>{props.content}</Markdown>
-      </CardContent>
-    </Card>
-  );
-
   return (
-    <Box
+    <Container
       sx={{
         width: '100%',
-        height: '90vh',
+
         position: 'relative',
       }}
     >
-      <Slide slides={props.sections.map((e) => SlideObject(e))} />
-    </Box>
+      <Card
+        sx={{
+          position: 'relative',
+          height: '100%',
+          display: 'flex',
+          overflow: 'auto',
+        }}
+      >
+        <CardContent sx={{ marginX: '3em' }}>
+          <Markdown>{props.section.content}</Markdown>
+        </CardContent>
+      </Card>
+    </Container>
   );
 }
 export default Layout;

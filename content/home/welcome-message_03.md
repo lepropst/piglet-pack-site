@@ -5,4 +5,4 @@ author:
   name: Elias Rangel
 ---
 
-## Piglet Pack's services are designed to relieve the stress and time required to manage the various technologies small businesses use. We provide support and solutions for traditional server management, website design, and hosting management services. We also provide services using serverless, SaaS, or cloud computing technologies.
+## I work to regularly update the site and include neat tricks I have learned as a fun way to keep my audience engaaged.

@@ -5,4 +5,4 @@ author:
   name: Elias Rangel
 ---
 
-## Piglet Pack provides essential technology services designed to increase the efficiency of small businesses. We assess every situation as if it were our own content and provide detailed solutions that are efficient and affordable.
+## Piglet Pack is the name given to my personal site because it represents an important aspect of my life: animals!

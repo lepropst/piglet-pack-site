@@ -5,4 +5,4 @@ author:
   name: Elias Rangel
 ---
 
-## From server management solutions and website design services, to monthly technology support and business integrations. Our foundations in advocacy, education, and a desire to build communities leads us in providing accessible web development services tailored for each client.
+## I created this site to showcase my work and serve as a center for my business profiles online.

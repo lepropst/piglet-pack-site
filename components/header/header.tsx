@@ -1,13 +1,12 @@
 import Link from 'next/link';
 import { pages } from '../../utilities/interfaces';
-import { ReactNode, SyntheticEvent, useState } from 'react';
+import { ReactNode, useState } from 'react';
 import {
   Box,
   Button,
   Container,
   Menu,
   MenuItem,
-  Theme,
   Typography,
   useMediaQuery,
 } from '@mui/material';
