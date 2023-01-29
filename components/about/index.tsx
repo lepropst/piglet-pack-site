@@ -1,12 +1,10 @@
 import { GlobalStyles } from '@mui/material';
 import Typography from '@mui/material/Typography';
-import Fade from '@mui/material/Fade';
-import Box, { BoxTypeMap } from '@mui/material/Box';
+
+import Box from '@mui/material/Box';
 import Image from 'next/image';
 import MissionStatementContainer from '../common/MissionStatement';
 import CommonLayout from './commonLayout';
-import Profiles from './profiles';
-import { useRef } from 'react';
 import Markdown from 'markdown-to-jsx';
 export type Props = {
   MissionStatementContent: {
@@ -14,17 +12,17 @@ export type Props = {
     date: string;
     content: string;
   };
-  whatWeDo: {
+  whoIAm: {
     title: string;
     date: string;
     content: string;
   };
-  whoWeAre: {
+  whatIDo: {
     title: string;
     date: string;
     content: string;
   };
-  whyWeDoIt: {
+  whyIDoIt: {
     title: string;
     date: string;
     content: string;
@@ -39,22 +37,21 @@ export type Props = {
 };
 export const Layout = (props: Props) => {
   const {
-    eliasProfile,
-    whoWeAre,
-    whatWeDo,
-    whyWeDoIt,
+    whoIAm,
+    whatIDo,
+    whyIDoIt,
     image,
     MissionStatementContent,
     minorityMessage,
   } = props;
-  const WhoWeAre = () => (
-    <CommonLayout content={whoWeAre.content} title={whoWeAre.title} />
+  const WhoIAm = () => (
+    <CommonLayout content={whoIAm.content} title={whoIAm.title} />
   );
-  const WhatWeDo = () => (
-    <CommonLayout content={whatWeDo.content} title={whatWeDo.title} />
+  const WhatIDo = () => (
+    <CommonLayout content={whatIDo.content} title={whatIDo.title} />
   );
-  const WhyWeDoIt = () => (
-    <CommonLayout content={whyWeDoIt.content} title={whyWeDoIt.title} />
+  const WhyIDoIt = () => (
+    <CommonLayout content={whyIDoIt.content} title={whyIDoIt.title} />
   );
   const MinorityMessage = (props: any) => {
     return (
@@ -91,6 +88,21 @@ export const Layout = (props: Props) => {
         <br /> Web Development and Design
       </h1>
       {inputGlobalStyles}
+
+      <WhoIAm />
+
+      <WhatIDo />
+
+      <WhyIDoIt />
+
+      <Box
+        sx={{
+          height: '2px',
+          background: 'black',
+          width: '80vw',
+          marginX: 'auto',
+        }}
+      />
       <MissionStatementContainer
         content={MissionStatementContent.content}
         minHeight={'60vh'}
@@ -107,22 +119,7 @@ export const Layout = (props: Props) => {
         )}
       </MissionStatementContainer>
 
-      <WhoWeAre />
-
-      <WhatWeDo />
-
-      <WhyWeDoIt />
-
-      <Box
-        sx={{
-          height: '2px',
-          background: 'black',
-          width: '80vw',
-          marginX: 'auto',
-        }}
-      />
-      {/* <MinorityMessage /> */}
-      <Profiles eliasProfile={eliasProfile} />
+      <MinorityMessage />
     </Box>
   );
 };

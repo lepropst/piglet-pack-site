@@ -5,6 +5,4 @@ author:
   name: Elias Rangel
 ---
 
-## Creating or managing a website introduces a slew of time-consuming tasks, especially for content creators. Performing these tasks and learning new technologies can consume time you may not have; however, making a choice to give up any amount of control can be concerning as well!
-
-## Piglet Pack provides the tools to solve these issues. Accessibility, consistent communication, and a high reporting standard is our attempt to instill confidence that our services are flexible and dynamic.
+## My passions include climbing, general practical skill education, and - of course - computers. These passions have driven me to pursue a B.S. in computer science while providing what I can to my local community.

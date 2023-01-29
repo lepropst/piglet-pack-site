@@ -5,4 +5,4 @@ author:
   name: Elias Rangel
 ---
 
-## I created this site to showcase my work and serve as a center for my business profiles online.
+## I created this site to showcase my work, serve as single source of information for my online business profiles, and as an example of my skills directly visible to those seeking my services.

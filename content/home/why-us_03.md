@@ -5,4 +5,4 @@ author:
   name: Elias Rangel
 ---
 
-## We focus on client needs. Services are designed from the ground up to service only what our clients need. Service plans and contracts remain flexible and completely dynamic allowing for greater control over what our clients want done. We can assume any role of management for your small business from full hosting and web presence management to simple user interface updates. Piglet Packs custom service plans truly allow clients control over the technology they use, the control they have, and the implementation methods chosen.
+## The efforts I have taken to be a resource in my local community currently focus on offering services revolving around my topics of study. These services are priced at a level that allows me to continue my education and pursuit of a professional career while being accessible to clients that would otherwise pay immensely for the same services elsewhere.

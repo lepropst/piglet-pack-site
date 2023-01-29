@@ -11,19 +11,19 @@ type Props = {
     author: { name: string };
     content: string;
   };
-  whatWeDo: {
+  whoIAm: {
     title: string;
     date: string;
     author: { name: string };
     content: string;
   };
-  whoWeAre: {
+  whatIDo: {
     title: string;
     date: string;
     author: { name: string };
     content: string;
   };
-  whyWeDoIt: {
+  whyIDoIt: {
     title: string;
     date: string;
     author: { name: string };
@@ -45,9 +45,9 @@ export const About = (props: Props) => {
   const {
     MissionStatementContent,
     eliasProfile,
-    whoWeAre,
-    whatWeDo,
-    whyWeDoIt,
+    whoIAm,
+    whatIDo,
+    whyIDoIt,
     minorityMessage,
   } = props;
 
@@ -86,9 +86,9 @@ export const About = (props: Props) => {
       <Layout
         minorityMessage={minorityMessage}
         image={image}
-        whoWeAre={whoWeAre}
-        whatWeDo={whatWeDo}
-        whyWeDoIt={whyWeDoIt}
+        whoIAm={whoIAm}
+        whatIDo={whatIDo}
+        whyIDoIt={whyIDoIt}
         MissionStatementContent={MissionStatementContent}
         eliasProfile={eliasProfile.content}
       />
@@ -103,19 +103,19 @@ export const getStaticProps = async () => {
     filename: 'mission-statement.md',
     fields: ['title', 'date', 'author', 'content'],
   });
-  const whatWeDo = getContent({
+  const whoIAm = getContent({
     directory: 'about',
-    filename: 'what-we-do.md',
+    filename: 'what-I-do.md',
     fields: ['title', 'date', 'author', 'content'],
   });
-  const whoWeAre = getContent({
+  const whatIDo = getContent({
     directory: 'about',
-    filename: 'who-we-are.md',
+    filename: 'who-I-am.md',
     fields: ['title', 'date', 'author', 'content'],
   });
-  const whyWeDoIt = getContent({
+  const whyIDoIt = getContent({
     directory: 'about',
-    filename: 'why-we-do-it.md',
+    filename: 'why-I-do-it.md',
     fields: ['title', 'date', 'author', 'content'],
   });
   const minorityMessage = getContent({
@@ -132,9 +132,9 @@ export const getStaticProps = async () => {
   return {
     props: {
       MissionStatementContent,
-      whatWeDo,
-      whoWeAre,
-      whyWeDoIt,
+      whoIAm,
+      whatIDo,
+      whyIDoIt,
       minorityMessage,
       eliasProfile,
     },

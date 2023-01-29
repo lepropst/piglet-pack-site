@@ -5,4 +5,4 @@ author:
   name: Elias Rangel
 ---
 
-## Piglet Pack provides services that cover concerns small business' run into when managing their digital assets or online presence. We maintain experience in a wide array of web development technologies with a main focus in website creation and maintenance along with the accompanying overhead. This means we are able to provide detailed actionable plans for everything from figuring out API management, to website deployment and anything in-between. Piglet Pack provides a central place to manage your business technologies, change a website, or update hosting configurations.
+## I focus on accessibility because it is a foundational aspect of my continued education. Without the ability to accommodate my education to alternative learning styles I would be unable to pursue my passion.

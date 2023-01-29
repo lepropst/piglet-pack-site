@@ -1,12 +1,12 @@
-import { useState, useCallback, MutableRefObject, useEffect } from "react";
+import { useState, useCallback, MutableRefObject, useEffect } from 'react';
 
 export function useIntersectionObserver({
   root,
   ref,
   threshold = 0.1,
-  margin = "0px",
+  margin = '0px',
 }: {
-  root: Element | Document | null;
+  root: Element | Document | null | HTMLDivElement;
   ref: MutableRefObject<any>;
   threshold?: number;
   margin?: string;

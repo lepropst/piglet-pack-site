@@ -5,4 +5,4 @@ author:
   name: Elias Rangel
 ---
 
-## Piglet Pack grew out of a desire the founders had to provide for themselves while pursuing their education. Our motivation to remain accessible and flexible stems from real world experience where it is evident that many people require much more care than are given. We strive to make choosing Piglet Pack an easy choice by being an easy choice.
+## Piglet Pack, my website, grew out of a desire to offer my services in order to facilitate my continued education. Now it serves as my central source of information in my professional career. My motivation to remain accessible stems from real world experience and underlies every effort I take in advancing my career.
