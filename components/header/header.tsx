@@ -5,6 +5,7 @@ import {
   Box,
   Button,
   Container,
+  Divider,
   Menu,
   MenuItem,
   Typography,
@@ -67,6 +68,7 @@ export default function Header() {
       <CustomHeaderLink key={202} noactive={0} to="/" onClick={() => null}>
         Piglet Pack
       </CustomHeaderLink>
+      <Divider component="div" variant="inset" />
       <Container>
         {isButtonVisible && (
           <Box
